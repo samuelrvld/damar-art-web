@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal Raport Digital Siswa - Damar Art (Local Sandbox)</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-[#f7f5f2] min-h-screen text-[#333333]">
+
+  <!-- Header -->
+  <header class="bg-[#a4413b] text-white py-4 px-6 shadow-md border-b-4 border-[#e3b695]">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <a href="index.html" class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-lg bg-[#e3b695] text-[#a4413b] font-bold flex items-center justify-center">D</div>
+          <span class="font-bold text-base font-['Montserrat']">Portal Raport Siswa Sanggar</span>
+        </a>
+      </div>
+      <a href="index.html" class="text-xs bg-[#e3b695] text-[#a4413b] px-4 py-2 rounded-full font-bold hover:bg-white transition-colors">
+        ← Kembali ke Website
+      </a>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto p-6 sm:p-10 space-y-8">
+    
+    <!-- Pencarian NISN / Nama Siswa -->
+    <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-gray-200 text-center space-y-4">
+      <div class="w-14 h-14 rounded-full bg-[#e3b695]/30 text-[#a4413b] flex items-center justify-center text-2xl mx-auto">
+        <i class="fas fa-id-card"></i>
+      </div>
+      <h2 class="text-xl font-bold text-[#a4413b] font-['Montserrat']">Cek Raport Perkembangan Siswa</h2>
+      <p class="text-xs text-gray-500 max-w-md mx-auto">Masukkan Nomor Induk Siswa (NIS) atau pilih data simulasi murid di bawah ini untuk melihat hasil evaluasi.</p>
+
+      <div class="max-w-md mx-auto flex gap-2 pt-2">
+        <input type="text" id="inputNis" placeholder="Contoh: DA-2026-001" value="DA-2026-001" class="flex-1 px-4 py-2.5 rounded-xl border border-gray-300 text-xs focus:outline-none focus:border-[#a4413b]">
+        <button onclick="cariRaport()" class="px-5 py-2.5 rounded-xl bg-[#a4413b] text-white font-bold text-xs hover:bg-[#8e322d] transition-colors">
+          Cari Raport
+        </button>
+      </div>
+    </div>
+
+    <!-- Hasil Raport Simulasi Siswa -->
+    <div id="hasilRaport" class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-gray-200 space-y-6">
+      
+      <!-- Profil Siswa -->
+      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center pb-6 border-b border-gray-200 gap-4">
+        <div>
+          <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-green-100 text-green-700">Status: Aktif</span>
+          <h3 class="text-xl font-bold text-gray-800 mt-1.5" id="namaMurid">Anindya Larasati</h3>
+          <p class="text-xs text-gray-500">NIS: <span class="font-mono font-bold text-[#a4413b]">DA-2026-001</span> | Kelas: Tari Tradisi Anak (Tingkat Dasar)</p>
+        </div>
+        <div class="text-right text-xs">
+          <p class="text-gray-400">Periode Evaluasi:</p>
+          <p class="font-bold text-[#333333]">Semester Genap 2026</p>
+        </div>
+      </div>
+
+      <!-- Tabel Nilai & Penilaian Tari -->
+      <div class="space-y-3">
+        <h4 class="font-bold text-sm text-[#a4413b] uppercase tracking-wider text-[11px]">Evaluasi Kompetensi Seni Tari</h4>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs">
+            <thead class="bg-gray-50 text-gray-500 uppercase text-[10px] border-b">
+              <tr>
+                <th class="py-3 px-4">Aspek Penilaian</th>
+                <th class="py-3 px-4">Keterangan</th>
+                <th class="py-3 px-4 text-center">Nilai</th>
+                <th class="py-3 px-4 text-center">Predikat</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              <tr>
+                <td class="py-3 px-4 font-bold text-gray-800">Wiraga (Ketepatan Gerak)</td>
+                <td class="py-3 px-4 text-gray-600">Ketepatan pose, kelenturan tubuh, dan kebersihan gerak tari Jejer Gandrung.</td>
+                <td class="py-3 px-4 text-center font-bold text-[#a4413b]">88</td>
+                <td class="py-3 px-4 text-center"><span class="px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-[10px]">Sangat Baik (A)</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-bold text-gray-800">Wirama (Ketukan & Irama)</td>
+                <td class="py-3 px-4 text-gray-600">Keselarasan tempo gerak dengan tabuhan kendang dan gamelan Banyuwangi.</td>
+                <td class="py-3 px-4 text-center font-bold text-[#a4413b]">92</td>
+                <td class="py-3 px-4 text-center"><span class="px-2 py-0.5 rounded bg-green-100 text-green-800 font-bold text-[10px]">Istimewa (A+)</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-bold text-gray-800">Wirasa (Penjiwaan & Ekspresi)</td>
+                <td class="py-3 px-4 text-gray-600">Ekspresi wajah, tatapan mata, dan daya pikat panggung.</td>
+                <td class="py-3 px-4 text-center font-bold text-[#a4413b]">85</td>
+                <td class="py-3 px-4 text-center"><span class="px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold text-[10px]">Sangat Baik (A)</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-bold text-gray-800">Kedisiplinan & Presensi</td>
+                <td class="py-3 px-4 text-gray-600">Kehadiran latihan sanggar (16 pertemuan penuh).</td>
+                <td class="py-3 px-4 text-center font-bold text-[#a4413b]">95</td>
+                <td class="py-3 px-4 text-center"><span class="px-2 py-0.5 rounded bg-green-100 text-green-800 font-bold text-[10px]">Istimewa (A+)</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Catatan Pelatih -->
+      <div class="bg-[#faf5f0] p-4 rounded-xl border border-[#e3b695] text-xs space-y-1.5">
+        <p class="font-bold text-[#a4413b]"><i class="fas fa-comment-dots mr-1"></i> Catatan Pelatih / Pembina:</p>
+        <p class="text-gray-700 leading-relaxed italic">
+          "Anindya menunjukkan perkembangan yang sangat pesat dalam penghayatan wirama. Direkomendasikan untuk mulai masuk ke kelompok pementasan tari kreasi lanjutan."
+        </p>
+      </div>
+
+    </div>
+
+  </main>
+
+  <script>
+    function cariRaport() {
+      const nis = document.getElementById('inputNis').value;
+      alert('Menampilkan data raport untuk NIS: ' + nis);
+    }
+  </script>
+</body>
+</html>

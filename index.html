@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beranda - Damar Art</title>
+  <meta name="description" content="Rumah Kreatif Damar Art - Tertiup Tidak Padam Terhempas Tetap Menghidupi. Komunitas Seni Tari dan Musik Tradisi Banyuwangi.">
+  <link rel="icon" href="https://damarart.com/wp-content/uploads/2023/12/cropped-favicon.jpg" type="image/jpeg">
+
+  <!-- Google Fonts: Poppins (300, 400, 500, 600, 700, 800, 900) & Montserrat (600, 700, 800, 900) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS & Font Awesome -->
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+            heading: ['Montserrat', 'Poppins', 'sans-serif'],
+            montserrat: ['Montserrat', 'sans-serif'],
+            poppins: ['Poppins', 'sans-serif'],
+          },
+          colors: {
+            damar: {
+              red: '#a4413b',
+              redDark: '#862924',
+              peach: '#e3b695',
+              peachDark: '#d49e77',
+              peachLight: '#faf5f0',
+              gray: '#333333',
+              muted: '#666666',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-white text-[#333333] font-sans antialiased">
+
+  <!-- ==================== 1. TOP HEADER BAR ==================== -->
+  <div class="bg-[#e3b695] text-[#333333] text-xs py-2 px-4 border-b border-[#d8a57e]/50">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
+      
+      <!-- Kontak Telepon & Email -->
+      <div class="flex items-center gap-6">
+        <a href="tel:082140704036" class="flex items-center gap-2 hover:text-[#a4413b] font-medium transition-colors">
+          <i class="fas fa-phone-alt text-[#a4413b]"></i>
+          <span>082140704036</span>
+        </a>
+        <a href="mailto:info@damarart.com" class="flex items-center gap-2 hover:text-[#a4413b] font-medium transition-colors">
+          <i class="far fa-envelope-open text-[#a4413b]"></i>
+          <span>info@damarart.com</span>
+        </a>
+      </div>
+
+      <!-- Menu Atas & Login Operator -->
+      <div class="flex items-center gap-5">
+        <nav class="hidden sm:flex items-center gap-4 text-xs font-medium text-[#444444]">
+          <a href="#pengurus" class="hover:text-[#a4413b] transition-colors">Pengurus & Pelatih</a>
+          <a href="kelas-seni.html" class="hover:text-[#a4413b] transition-colors">Kelas Seni</a>
+          <a href="https://wa.me/6282140704036" target="_blank" class="hover:text-[#a4413b] transition-colors">Hubungi</a>
+        </nav>
+        <div class="h-3 w-[1px] bg-[#a4413b]/30 hidden sm:block"></div>
+        <a href="login.html" class="flex items-center gap-1.5 font-semibold text-[#a4413b] hover:text-[#78231e] transition-colors">
+          <i class="fas fa-user-circle text-sm"></i>
+          <span>Login Operator</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==================== 2. MAIN HEADER (STICKY NAVBAR) ==================== -->
+  <header class="sticky top-0 z-50 bg-[#a4413b] text-white shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo Damar Art -->
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="https://damarart.com/wp-content/uploads/2023/10/penyun-news-4-1-hitam-tulisan-copy-lans1-1.png" alt="Damar Art Logo" class="h-12 w-auto object-contain brightness-0 invert" onerror="this.onerror=null; this.src='https://damarart.com/wp-content/uploads/2023/12/cropped-favicon.jpg'">
+          <div class="hidden lg:block">
+            <span class="block font-bold text-lg tracking-wider uppercase text-white font-montserrat">Damar Art</span>
+            <span class="block text-[11px] text-[#e3b695] italic font-light">Tertiup Tidak Padam Terhempas Tetap Menghidupi</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center gap-6 text-[13px] font-medium tracking-wide">
+          <a href="index.html" class="text-[#e3b695] font-bold py-2 border-b-2 border-[#e3b695]">Beranda</a>
+
+          <!-- Profil Dropdown -->
+          <div class="relative nav-dropdown group py-6">
+            <button class="flex items-center gap-1 hover:text-[#e3b695] transition-colors focus:outline-none">
+              <span>Profil</span>
+              <i class="fa fa-angle-down text-xs"></i>
+            </button>
+            <div class="dropdown-menu absolute left-0 top-full hidden w-56 bg-[#a4413b] border-t-2 border-[#e3b695] shadow-xl py-2 z-50">
+              <a href="#sambutan" class="block px-4 py-2 text-xs hover:bg-[#8e322d] hover:text-[#e3b695] transition-colors">Sambutan Ketua Komunitas</a>
+              <a href="tentang-kami.html" class="block px-4 py-2 text-xs hover:bg-[#8e322d] hover:text-[#e3b695] transition-colors">Sejarah</a>
+              <a href="tentang-kami.html" class="block px-4 py-2 text-xs hover:bg-[#8e322d] hover:text-[#e3b695] transition-colors">Tentang Kami</a>
+              <a href="tentang-kami.html#visi-misi" class="block px-4 py-2 text-xs hover:bg-[#8e322d] hover:text-[#e3b695] transition-colors">Visi dan Misi</a>
+            </div>
+          </div>
+
+          <a href="artikel.html" class="hover:text-[#e3b695] transition-colors">Artikel</a>
+
+          <!-- Informasi Dropdown -->
+          <div class="relative nav-dropdown group py-6">
+            <button class="flex items-center gap-1 hover:text-[#e3b695] transition-colors focus:outline-none">
+              <span>Informasi</span>
+              <i class="fa fa-angle-down text-xs"></i>
+            </button>
+            <div class="dropdown-menu absolute left-0 top-full hidden w-48 bg-[#a4413b] border-t-2 border-[#e3b695] shadow-xl py-2 z-50">
+              <a href="#agenda" class="block px-4 py-2 text-xs hover:bg-[#8e322d] hover:text-[#e3b695] transition-colors">Agenda</a>
+              <a href="perijinan-karya.html" class="block px-4 py-2 text-xs hover:bg-[#8e322d] hover:text-[#e3b695] transition-colors">Perijinan Karya</a>
+              <a href="#pengumuman" class="block px-4 py-2 text-xs hover:bg-[#8e322d] hover:text-[#e3b695] transition-colors">Pengumuman</a>
+            </div>
+          </div>
+
+          <a href="#fasilitas" class="hover:text-[#e3b695] transition-colors">Fasilitas</a>
+          <a href="kelas-seni.html" class="hover:text-[#e3b695] transition-colors">Kelas Seni</a>
+        </nav>
+
+        <!-- CTA Button "Daftar Sekarang" -->
+        <div class="flex items-center gap-3">
+          <a href="https://wa.me/6282140704036" target="_blank" class="px-5 py-2.5 rounded-full bg-[#e3b695] text-[#a4413b] font-bold text-xs hover:bg-white hover:text-[#a4413b] transition-all shadow-md">
+            Daftar Sekarang
+          </a>
+          
+          <!-- Mobile Menu Button -->
+          <button id="navToggle" class="md:hidden p-2 text-white hover:text-[#e3b695]">
+            <i class="fas fa-bars text-xl"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Nav Menu -->
+    <div id="mobileNavMenu" class="hidden md:hidden bg-[#8e322d] border-t border-white/10 px-4 py-4 space-y-2 text-xs">
+      <a href="index.html" class="block py-1.5 text-[#e3b695] font-bold">Beranda</a>
+      <a href="tentang-kami.html" class="block py-1.5 hover:text-[#e3b695]">Tentang Kami</a>
+      <a href="tentang-kami.html#visi-misi" class="block py-1.5 hover:text-[#e3b695]">Visi dan Misi</a>
+      <a href="artikel.html" class="block py-1.5 hover:text-[#e3b695]">Artikel</a>
+      <a href="#agenda" class="block py-1.5 hover:text-[#e3b695]">Agenda</a>
+      <a href="#pengumuman" class="block py-1.5 hover:text-[#e3b695]">Pengumuman</a>
+      <a href="perijinan-karya.html" class="block py-1.5 hover:text-[#e3b695]">Perijinan Karya</a>
+      <a href="kelas-seni.html" class="block py-1.5 hover:text-[#e3b695]">Kelas Seni</a>
+      <a href="login.html" class="block py-1.5 text-[#e3b695] font-semibold">Login Operator</a>
+    </div>
+  </header>
+
+  <!-- ==================== 3. HERO BANNER SLIDER (10 SLIDES ASLI) ==================== -->
+  <section class="relative bg-[#1a1a1a] text-white overflow-hidden">
+    <div id="heroSlider" class="relative w-full h-[400px] sm:h-[500px]">
+      
+      <!-- Slide 1 -->
+      <div class="slide-item absolute inset-0 transition-opacity duration-700 opacity-100 flex items-center justify-center">
+        <img src="https://damarart.com/wp-content/uploads/2025/03/slide-harlah.jpg" alt="Harlah 4th" class="w-full h-full object-cover" onerror="this.src='https://damarart.com/wp-content/uploads/2023/08/lib.jpg'">
+        <div class="absolute inset-0 bg-black/45 flex items-center justify-center text-center px-4">
+          <div class="max-w-2xl space-y-3">
+            <h2 class="text-3xl sm:text-5xl font-extrabold uppercase tracking-wide text-white drop-shadow-md font-montserrat">Harlah 4th</h2>
+            <p class="text-sm sm:text-lg text-[#e3b695] font-medium drop-shadow">Rumah Kreatif Damar Art</p>
+            <div class="pt-2">
+              <a href="https://wa.me/6282140704036" target="_blank" class="inline-block px-6 py-2.5 rounded bg-[#e3b695] text-[#a4413b] font-bold text-xs hover:bg-[#a4413b] hover:text-white transition-all shadow-lg">
+                Info PPDB
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="slide-item absolute inset-0 transition-opacity duration-700 opacity-0 flex items-center justify-center">
+        <img src="https://damarart.com/wp-content/uploads/2024/05/home-slider3.jpg" alt="Wanci Kahuripan" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black/45 flex items-center justify-center text-center px-4">
+          <div class="max-w-2xl space-y-3">
+            <h2 class="text-2xl sm:text-4xl font-extrabold text-white drop-shadow-md font-montserrat">Karya Tari Wanci Kahuripan</h2>
+            <p class="text-sm sm:text-lg text-[#e3b695] font-medium drop-shadow">Produksi Damar Art</p>
+            <div class="pt-2">
+              <a href="https://www.youtube.com/watch?v=0fTvKnkiN0s" target="_blank" class="inline-block px-6 py-2.5 rounded bg-[#e3b695] text-[#a4413b] font-bold text-xs hover:bg-[#a4413b] hover:text-white transition-all shadow-lg">
+                Lihat Karya
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="slide-item absolute inset-0 transition-opacity duration-700 opacity-0 flex items-center justify-center">
+        <img src="https://damarart.com/wp-content/uploads/2023/10/home-slider-3.jpg" alt="Tanjung Gemirang" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black/45 flex items-center justify-center text-center px-4">
+          <div class="max-w-2xl space-y-3">
+            <h2 class="text-2xl sm:text-4xl font-extrabold text-white drop-shadow-md font-montserrat">Karya Tari Tanjung Gemirang</h2>
+            <p class="text-sm sm:text-lg text-[#e3b695] font-medium drop-shadow">Produksi Damar Art</p>
+            <div class="pt-2">
+              <a href="https://www.youtube.com/watch?v=ONlHCTn7cBo" target="_blank" class="inline-block px-6 py-2.5 rounded bg-[#e3b695] text-[#a4413b] font-bold text-xs hover:bg-[#a4413b] hover:text-white transition-all shadow-lg">
+                Lihat Karya
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 4 -->
+      <div class="slide-item absolute inset-0 transition-opacity duration-700 opacity-0 flex items-center justify-center">
+        <img src="https://damarart.com/wp-content/uploads/2024/10/ABC08725.jpg" alt="Gembrong Gemirang" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black/45 flex items-center justify-center text-center px-4">
+          <div class="max-w-2xl space-y-3">
+            <h2 class="text-2xl sm:text-4xl font-extrabold text-white drop-shadow-md font-montserrat">Karya Musik Gembrong Gemirang</h2>
+            <p class="text-sm sm:text-lg text-[#e3b695] font-medium drop-shadow">Produksi Damar Art</p>
+            <div class="pt-2">
+              <a href="https://youtu.be/juwbmws21d8?si=gIueeOvNRgM8AG_L" target="_blank" class="inline-block px-6 py-2.5 rounded bg-[#e3b695] text-[#a4413b] font-bold text-xs hover:bg-[#a4413b] hover:text-white transition-all shadow-lg">
+                Lihat Karya
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 5 -->
+      <div class="slide-item absolute inset-0 transition-opacity duration-700 opacity-0 flex items-center justify-center">
+        <img src="https://damarart.com/wp-content/uploads/2024/10/genjah.jpg" alt="Genjah Gumiwang" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black/45 flex items-center justify-center text-center px-4">
+          <div class="max-w-2xl space-y-3">
+            <h2 class="text-2xl sm:text-4xl font-extrabold text-white drop-shadow-md font-montserrat">Karya Tari Genjah Gumiwang</h2>
+            <p class="text-sm sm:text-lg text-[#e3b695] font-medium drop-shadow">Produksi Damar Art</p>
+            <div class="pt-2">
+              <a href="https://youtu.be/jPhEqa3XdXU?si=YTotPu6vqqB4O5ay" target="_blank" class="inline-block px-6 py-2.5 rounded bg-[#e3b695] text-[#a4413b] font-bold text-xs hover:bg-[#a4413b] hover:text-white transition-all shadow-lg">
+                Lihat Karya
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 6 -->
+      <div class="slide-item absolute inset-0 transition-opacity duration-700 opacity-0 flex items-center justify-center">
+        <img src="https://damarart.com/wp-content/uploads/2026/08/IMG_20260806_223130_975.jpg" alt="Istana Negara" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black/50 flex items-center justify-center text-center px-4">
+          <div class="max-w-3xl space-y-3">
+            <h2 class="text-xl sm:text-3xl font-extrabold text-white drop-shadow-md font-montserrat">DAMAR ART GUNCANG ISTANA NEGARA DENGAN KARYA-KARYA TERBAIK</h2>
+            <p class="text-xs sm:text-sm text-[#e3b695] font-medium drop-shadow">DAMAR ART GOES TO ISTANA PRESIDEN: Membawa Suara Banyuwangi ke Perayaan HUT ke-80 Republik Indonesia</p>
+            <div class="pt-2">
+              <a href="https://www.instagram.com/p/DNrdRTTZEhf/" target="_blank" class="inline-block px-6 py-2.5 rounded bg-[#e3b695] text-[#a4413b] font-bold text-xs hover:bg-[#a4413b] hover:text-white transition-all shadow-lg">
+                Lihat Karya
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 7 -->
+      <div class="slide-item absolute inset-0 transition-opacity duration-700 opacity-0 flex items-center justify-center">
+        <img src="https://damarart.com/wp-content/uploads/2026/08/IMG_20260806_214433_835.jpg" alt="Gus Ipul" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black/50 flex items-center justify-center text-center px-4">
+          <div class="max-w-3xl space-y-3">
+            <h2 class="text-xl sm:text-3xl font-extrabold text-white drop-shadow-md font-montserrat">GUS IPUL MENTRI SOSIAL TERKESIMA DENGAN DAMAR ART</h2>
+            <p class="text-xs sm:text-sm text-[#e3b695] font-medium drop-shadow">GUS IPUL TERPESONA TARI PANORAMA BANYUWANGI DALAM KUNJUNGAN KERJA DI BANYUWANGI</p>
+            <div class="pt-2">
+              <a href="https://youtu.be/zfAr27od2yo?si=Urd5r8CpdQHRreZe" target="_blank" class="inline-block px-6 py-2.5 rounded bg-[#e3b695] text-[#a4413b] font-bold text-xs hover:bg-[#a4413b] hover:text-white transition-all shadow-lg">
+                Lihat Karya
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 8 -->
+      <div class="slide-item absolute inset-0 transition-opacity duration-700 opacity-0 flex items-center justify-center">
+        <img src="https://damarart.com/wp-content/uploads/2026/08/IMG-20250610-WA0067.jpg" alt="Nitih Nitis Roso" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black/45 flex items-center justify-center text-center px-4">
+          <div class="max-w-2xl space-y-3">
+            <h2 class="text-2xl sm:text-4xl font-extrabold text-white drop-shadow-md font-montserrat">NITIH NITIS ROSO</h2>
+            <p class="text-sm sm:text-lg text-[#e3b695] font-medium drop-shadow">Sebuah Ungkapan ekspresi Nak Damar Art</p>
+            <div class="pt-2">
+              <a href="artikel.html" class="inline-block px-6 py-2.5 rounded bg-[#e3b695] text-[#a4413b] font-bold text-xs hover:bg-[#a4413b] hover:text-white transition-all shadow-lg">
+                Baca Artikel
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 9 -->
+      <div class="slide-item absolute inset-0 transition-opacity duration-700 opacity-0 flex items-center justify-center">
+        <img src="https://damarart.com/wp-content/uploads/2026/08/WhatsApp-Image-2025-04-16-at-21.05.00-scaled.jpeg" alt="3 Tahun Damar Art" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black/50 flex items-center justify-center text-center px-4">
+          <div class="max-w-2xl space-y-3">
+            <h2 class="text-2xl sm:text-4xl font-extrabold text-white drop-shadow-md font-montserrat">3 Tahun Rumah Kreatif Damar Art</h2>
+            <p class="text-sm sm:text-base text-[#e3b695] font-medium drop-shadow">"Semangat Gotong Royong Menuju Merdeka Berbudaya"</p>
+            <div class="pt-2">
+              <a href="https://www.youtube.com/live/NSAS0w5ZUKY?si=meJLaIvpzjcseF2l" target="_blank" class="inline-block px-6 py-2.5 rounded bg-[#e3b695] text-[#a4413b] font-bold text-xs hover:bg-[#a4413b] hover:text-white transition-all shadow-lg">
+                Lihat Kegiatan
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 10 -->
+      <div class="slide-item absolute inset-0 transition-opacity duration-700 opacity-0 flex items-center justify-center">
+        <img src="https://damarart.com/wp-content/uploads/2026/08/IMG-20240514-WA0058.jpg" alt="IMEX Bali" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black/50 flex items-center justify-center text-center px-4">
+          <div class="max-w-3xl space-y-3">
+            <h2 class="text-xl sm:text-3xl font-extrabold text-white drop-shadow-md font-montserrat">DAMAR ART HADIR DI PANGGUNG IMEX INONESIAN MUSIC EKSPO 2024 BALI</h2>
+            <p class="text-xs sm:text-sm text-[#e3b695] font-medium drop-shadow">Panggung Internasional</p>
+            <div class="pt-2">
+              <a href="artikel.html" class="inline-block px-6 py-2.5 rounded bg-[#e3b695] text-[#a4413b] font-bold text-xs hover:bg-[#a4413b] hover:text-white transition-all shadow-lg">
+                Lihat Info
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slider Controls (Left & Right Arrows) -->
+      <button onclick="prevSlide()" class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-[#e3b695] text-[#a4413b] flex items-center justify-center hover:bg-[#a4413b] hover:text-white transition-colors z-20 shadow-md" aria-label="Previous Slide">
+        <i class="fas fa-angle-left"></i>
+      </button>
+      <button onclick="nextSlide()" class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-[#e3b695] text-[#a4413b] flex items-center justify-center hover:bg-[#a4413b] hover:text-white transition-colors z-20 shadow-md" aria-label="Next Slide">
+        <i class="fas fa-angle-right"></i>
+      </button>
+
+      <!-- Slider Indicators / Dots -->
+      <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-1.5 z-20" id="sliderDots">
+        <button class="w-3 h-3 rounded-full bg-[#a4413b] border-2 border-white" onclick="goToSlide(0)"></button>
+        <button class="w-2.5 h-2.5 rounded-full bg-[#e3b695]" onclick="goToSlide(1)"></button>
+        <button class="w-2.5 h-2.5 rounded-full bg-[#e3b695]" onclick="goToSlide(2)"></button>
+        <button class="w-2.5 h-2.5 rounded-full bg-[#e3b695]" onclick="goToSlide(3)"></button>
+        <button class="w-2.5 h-2.5 rounded-full bg-[#e3b695]" onclick="goToSlide(4)"></button>
+        <button class="w-2.5 h-2.5 rounded-full bg-[#e3b695]" onclick="goToSlide(5)"></button>
+        <button class="w-2.5 h-2.5 rounded-full bg-[#e3b695]" onclick="goToSlide(6)"></button>
+        <button class="w-2.5 h-2.5 rounded-full bg-[#e3b695]" onclick="goToSlide(7)"></button>
+        <button class="w-2.5 h-2.5 rounded-full bg-[#e3b695]" onclick="goToSlide(8)"></button>
+        <button class="w-2.5 h-2.5 rounded-full bg-[#e3b695]" onclick="goToSlide(9)"></button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 4. LAYANAN UNGGULAN (9 QUICK ICON GRID) ==================== -->
+  <section class="py-12 bg-white border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="flex items-center justify-between mb-8">
+        <div>
+          <h2 class="text-2xl font-bold text-[#333333] border-l-4 border-[#a4413b] pl-3 font-montserrat">
+            Layanan Unggulan
+          </h2>
+          <div class="w-12 h-1 bg-[#a4413b] mt-1 ml-3 rounded-full"></div>
+        </div>
+        <button onclick="openLayananModal()" class="px-4 py-1.5 rounded-full bg-[#a4413b] text-white text-xs font-semibold hover:bg-[#862924] flex items-center gap-1.5 transition-all shadow-sm">
+          <i class="fas fa-qrcode"></i>
+          <span>Lainnya</span>
+        </button>
+      </div>
+
+      <!-- 9 Icons Grid (Original elementor-widget-jet-listing-grid) -->
+      <div class="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-9 gap-4 text-center">
+        
+        <!-- 1. Jurnal -->
+        <a href="https://damarart.com/jurnal-wanci-kinangan" target="_blank" class="group flex flex-col items-center p-3 rounded-xl hover:bg-[#faf5f0] transition-colors">
+          <div class="w-16 h-16 rounded-full border-2 border-[#e3b695] p-1 mb-2 quick-menu-icon flex items-center justify-center bg-white shadow-sm">
+            <img src="https://damarart.com/wp-content/uploads/2026/09/ChatGPT-Image-11-Sep-2026-08.45.23-1.png" alt="Jurnal" class="w-12 h-12 object-contain rounded-full" onerror="this.src='https://damarart.com/wp-content/uploads/2023/12/sambutan.png'">
+          </div>
+          <span class="text-xs font-semibold text-[#a4413b] group-hover:underline">Jurnal</span>
+        </a>
+
+        <!-- 2. Perijinan -->
+        <a href="perijinan-karya.html" class="group flex flex-col items-center p-3 rounded-xl hover:bg-[#faf5f0] transition-colors">
+          <div class="w-16 h-16 rounded-full border-2 border-[#e3b695] p-1 mb-2 quick-menu-icon flex items-center justify-center bg-white shadow-sm">
+            <img src="https://damarart.com/wp-content/uploads/2026/08/Desain-tanpa-judul-25.png" alt="Perijinan" class="w-12 h-12 object-contain rounded-full" onerror="this.src='https://damarart.com/wp-content/uploads/2023/12/sambutan.png'">
+          </div>
+          <span class="text-xs font-semibold text-[#a4413b] group-hover:underline">Perijinan</span>
+        </a>
+
+        <!-- 3. Raport -->
+        <a href="raport.html" class="group flex flex-col items-center p-3 rounded-xl hover:bg-[#faf5f0] transition-colors">
+          <div class="w-16 h-16 rounded-full border-2 border-[#e3b695] p-1 mb-2 quick-menu-icon flex items-center justify-center bg-white shadow-sm">
+            <img src="https://damarart.com/wp-content/uploads/2024/01/raport-1.png" alt="Raport" class="w-12 h-12 object-contain" onerror="this.src='https://damarart.com/wp-content/uploads/2023/12/sambutan.png'">
+          </div>
+          <span class="text-xs font-semibold text-[#a4413b] group-hover:underline">Raport</span>
+        </a>
+
+        <!-- 4. Sambutan -->
+        <a href="#sambutan" class="group flex flex-col items-center p-3 rounded-xl hover:bg-[#faf5f0] transition-colors">
+          <div class="w-16 h-16 rounded-full border-2 border-[#e3b695] p-1 mb-2 quick-menu-icon flex items-center justify-center bg-white shadow-sm">
+            <img src="https://damarart.com/wp-content/uploads/2023/12/sambutan.png" alt="Sambutan" class="w-12 h-12 object-contain">
+          </div>
+          <span class="text-xs font-semibold text-[#a4413b] group-hover:underline">Sambutan</span>
+        </a>
+
+        <!-- 5. About us -->
+        <a href="tentang-kami.html" class="group flex flex-col items-center p-3 rounded-xl hover:bg-[#faf5f0] transition-colors">
+          <div class="w-16 h-16 rounded-full border-2 border-[#e3b695] p-1 mb-2 quick-menu-icon flex items-center justify-center bg-white shadow-sm">
+            <img src="https://damarart.com/wp-content/uploads/2023/12/tentang.png" alt="About us" class="w-12 h-12 object-contain">
+          </div>
+          <span class="text-xs font-semibold text-[#a4413b] group-hover:underline">About us</span>
+        </a>
+
+        <!-- 6. Kelas -->
+        <a href="kelas-seni.html" class="group flex flex-col items-center p-3 rounded-xl hover:bg-[#faf5f0] transition-colors">
+          <div class="w-16 h-16 rounded-full border-2 border-[#e3b695] p-1 mb-2 quick-menu-icon flex items-center justify-center bg-white shadow-sm">
+            <img src="https://damarart.com/wp-content/uploads/2023/12/kelas-seni.png" alt="Kelas" class="w-12 h-12 object-contain">
+          </div>
+          <span class="text-xs font-semibold text-[#a4413b] group-hover:underline">Kelas</span>
+        </a>
+
+        <!-- 7. Fasilitas -->
+        <a href="#fasilitas" class="group flex flex-col items-center p-3 rounded-xl hover:bg-[#faf5f0] transition-colors">
+          <div class="w-16 h-16 rounded-full border-2 border-[#e3b695] p-1 mb-2 quick-menu-icon flex items-center justify-center bg-white shadow-sm">
+            <img src="https://damarart.com/wp-content/uploads/2023/12/fasilitas-1.png" alt="Fasilitas" class="w-12 h-12 object-contain">
+          </div>
+          <span class="text-xs font-semibold text-[#a4413b] group-hover:underline">Fasilitas</span>
+        </a>
+
+        <!-- 8. Karya -->
+        <a href="#karya" class="group flex flex-col items-center p-3 rounded-xl hover:bg-[#faf5f0] transition-colors">
+          <div class="w-16 h-16 rounded-full border-2 border-[#e3b695] p-1 mb-2 quick-menu-icon flex items-center justify-center bg-white shadow-sm">
+            <img src="https://damarart.com/wp-content/uploads/2023/12/karya.png" alt="Karya" class="w-12 h-12 object-contain">
+          </div>
+          <span class="text-xs font-semibold text-[#a4413b] group-hover:underline">Karya</span>
+        </a>
+
+        <!-- 9. Pengurus -->
+        <a href="#pengurus" class="group flex flex-col items-center p-3 rounded-xl hover:bg-[#faf5f0] transition-colors">
+          <div class="w-16 h-16 rounded-full border-2 border-[#e3b695] p-1 mb-2 quick-menu-icon flex items-center justify-center bg-white shadow-sm">
+            <img src="https://damarart.com/wp-content/uploads/2023/12/Pengurus.png" alt="Pengurus" class="w-12 h-12 object-contain">
+          </div>
+          <span class="text-xs font-semibold text-[#a4413b] group-hover:underline">Pengurus</span>
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 5. SECTION PROFIL / SELAMAT DATANG ==================== -->
+  <section id="sambutan" class="py-14 bg-[#fbfbfb]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-white p-6 sm:p-10 rounded-2xl shadow-sm border border-gray-100">
+        
+        <!-- Left: Foto Pimpinan / Sanggar -->
+        <div class="lg:col-span-4 flex flex-col items-center text-center">
+          <div class="w-56 h-56 rounded-full overflow-hidden border-4 border-[#e3b695] shadow-md mb-4 bg-gray-50">
+            <img src="https://damarart.com/wp-content/uploads/2023/11/foto-dwpN.png" alt="Pimpinan Damar Art" class="w-full h-full object-cover">
+          </div>
+          <h3 class="font-bold text-base text-[#333333] font-montserrat">Selamat Datang di Website Damar Art</h3>
+        </div>
+
+        <!-- Right: Deskripsi & Kutipan -->
+        <div class="lg:col-span-8 space-y-4">
+          <div class="flex items-center gap-3">
+            <i class="fas fa-quote-left text-2xl text-[#a4413b]"></i>
+            <h2 class="text-2xl font-bold text-[#a4413b] font-montserrat">Komunitas Damar Art</h2>
+          </div>
+          <p class="text-sm text-[#555555] leading-relaxed text-justify">
+            Merupakan komunitas seni yang memproduksi karya-karya seni bidang musik, tari, dan teater. Beranggotakan para generasi muda (milenial) yang mencintai dan berupaya melestarikan warisan budaya Indonesia terkhusus seni budaya yang ada di Banyuwangi tercinta. Melalui pendekatan kreatif dan edukatif, Damar Art terus berinovasi mencetak bibit seniman berdaya saing tinggi.
+          </p>
+          <hr class="border-gray-200">
+          
+          <!-- Dua Tombol Aksi -->
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a href="tentang-kami.html" class="px-6 py-2.5 rounded bg-[#a4413b] text-white text-xs font-semibold hover:bg-[#862924] transition-colors flex items-center gap-2 shadow-sm">
+              <i class="fas fa-user-tie"></i>
+              <span>Sambutan</span>
+            </a>
+            <a href="tentang-kami.html#visi-misi" class="px-6 py-2.5 rounded bg-[#e3b695] text-[#a4413b] text-xs font-semibold hover:bg-[#d49e77] hover:text-white transition-colors flex items-center gap-2 shadow-sm">
+              <i class="far fa-dot-circle"></i>
+              <span>Visi Misi</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 6. PROMO BANNERS ==================== -->
+  <section class="py-6 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      
+      <!-- Banner 1: PPDB Pendaftaran -->
+      <a href="kelas-seni.html" class="block rounded-xl overflow-hidden shadow hover:shadow-lg transition-all group">
+        <img src="https://damarart.com/wp-content/uploads/2023/11/banner-daftar.jpg" alt="Daftar Sekarang" class="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform">
+      </a>
+
+      <!-- Banner 2: Info Kelas Seni -->
+      <a href="kelas-seni.html" class="block rounded-xl overflow-hidden shadow hover:shadow-lg transition-all group">
+        <img src="https://damarart.com/wp-content/uploads/2023/11/banner-kelas.jpg" alt="Info Kelas Seni" class="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform">
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ==================== 7. ARTIKEL & BERITA TERBARU ==================== -->
+  <section class="py-12 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex items-center justify-between mb-8 border-b pb-3">
+        <div>
+          <h2 class="text-2xl font-bold text-[#333333] border-l-4 border-[#a4413b] pl-3 font-montserrat">
+            Artikel & Berita
+          </h2>
+          <div class="w-12 h-1 bg-[#a4413b] mt-1 ml-3 rounded-full"></div>
+        </div>
+        <a href="artikel.html" class="px-4 py-1.5 rounded bg-[#a4413b] text-white text-xs font-semibold hover:bg-[#862924] transition-colors">
+          Lihat Semua
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        
+        <!-- Featured Big Post (Left 5 Cols) -->
+        <div class="lg:col-span-5 bg-[#fafafa] rounded-xl overflow-hidden border border-gray-100 flex flex-col justify-between hover:shadow-md transition-shadow">
+          <div>
+            <div class="relative aspect-[16/10] overflow-hidden bg-gray-100">
+              <img src="https://damarart.com/wp-content/uploads/elementor/thumbs/WhatsApp-Image-2026-09-07-at-13.32.20-rt2x34clwx7h838gvq763sw0pj4pmi36lulq3cc8rk.jpeg" alt="Workshop 4 Kota" class="w-full h-full object-cover" onerror="this.src='https://damarart.com/wp-content/uploads/2026/08/IMG_20260806_233335_522.jpg'">
+              <span class="absolute top-3 left-3 px-2.5 py-1 bg-[#a4413b] text-white text-[11px] font-bold rounded shadow">Terbaru</span>
+            </div>
+            <div class="p-5 space-y-2">
+              <h3 class="text-lg font-bold text-[#a4413b] hover:text-[#7d2621] font-montserrat">
+                <a href="artikel.html">
+                  Workshop Tari Damar Art 2026: Dari Kota ke Kota Bergerak di 4 Kota Jawa Timur
+                </a>
+              </h3>
+              <p class="text-xs text-[#666666] leading-relaxed">
+                Jawa Timur, 2026 — Rumah Kreatif Damar Art kembali memperluas perjalanan berkaryanya melalui rangkaian workshop tari di berbagai kota di Jawa Timur. Program ini menghadirkan ruang belajar intensif bagi para penari muda...
+              </p>
+            </div>
+          </div>
+          <div class="p-5 pt-0 flex items-center justify-between text-[11px] text-[#888888] border-t border-gray-200 mt-4">
+            <span class="flex items-center gap-1.5"><i class="fas fa-calendar-alt text-[#a4413b]"></i> 8 September 2026</span>
+            <span class="flex items-center gap-1.5"><i class="far fa-clock text-[#a4413b]"></i> 2 weeks ago</span>
+          </div>
+        </div>
+
+        <!-- Recent Articles List (Right 7 Cols) -->
+        <div class="lg:col-span-7 space-y-4">
+          
+          <!-- Item 1 -->
+          <div class="flex flex-col sm:flex-row gap-4 p-4 rounded-xl bg-white border border-gray-100 hover:shadow-md transition-shadow">
+            <div class="w-full sm:w-40 h-28 bg-gray-100 rounded-lg overflow-hidden shrink-0">
+              <img src="https://damarart.com/wp-content/uploads/2026/08/WhatsApp-Image-2026-08-22-at-14.38.38.jpeg" alt="Semarak Kemerdekaan" class="w-full h-full object-cover">
+            </div>
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <span class="text-[10px] font-bold text-[#a4413b] uppercase">Berita</span>
+                <h4 class="font-bold text-sm text-[#333333] hover:text-[#a4413b] mt-1 font-montserrat">
+                  <a href="artikel.html">
+                    Semarak Kemerdekaan Bersama Damar Art 2026: Mengenang Perjuangan Pahlawan Bangsa
+                  </a>
+                </h4>
+                <p class="text-xs text-[#777777] line-clamp-2 mt-1">Banyuwangi, 17 Agustus 2026 — Semangat kemerdekaan terasa meriah dengan sajian tarian kolosal persembahan Damar Art...</p>
+              </div>
+              <div class="text-[10px] text-[#999999] flex items-center gap-2 mt-2">
+                <i class="far fa-clock text-[#a4413b]"></i> 1 month ago
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="flex flex-col sm:flex-row gap-4 p-4 rounded-xl bg-white border border-gray-100 hover:shadow-md transition-shadow">
+            <div class="w-full sm:w-40 h-28 bg-gray-100 rounded-lg overflow-hidden shrink-0">
+              <img src="https://damarart.com/wp-content/uploads/2026/08/ChatGPT-Image-22-Agu-2026-15.04.23-1.png" alt="Damar Art Goes to Magelang" class="w-full h-full object-cover">
+            </div>
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <span class="text-[10px] font-bold text-[#a4413b] uppercase">Berita</span>
+                <h4 class="font-bold text-sm text-[#333333] hover:text-[#a4413b] mt-1 font-montserrat">
+                  <a href="artikel.html">
+                    DAMAR ART GOES TO MAGELANG: Membawa Wanci Kahuripan ke Festival Bhumi Atsanti V
+                  </a>
+                </h4>
+                <p class="text-xs text-[#777777] line-clamp-2 mt-1">Magelang, 22 Agustus 2026 — Penampilan magis memukau ratusan penonton di pelataran Candi Borobudur melalui sajian Wanci Kahuripan...</p>
+              </div>
+              <div class="text-[10px] text-[#999999] flex items-center gap-2 mt-2">
+                <i class="far fa-clock text-[#a4413b]"></i> 1 month ago
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="flex flex-col sm:flex-row gap-4 p-4 rounded-xl bg-white border border-gray-100 hover:shadow-md transition-shadow">
+            <div class="w-full sm:w-40 h-28 bg-gray-100 rounded-lg overflow-hidden shrink-0">
+              <img src="https://damarart.com/wp-content/uploads/2026/08/IMG_20260806_233138_812.jpg" alt="Asesor UNESCO" class="w-full h-full object-cover">
+            </div>
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <span class="text-[10px] font-bold text-[#a4413b] uppercase">Berita</span>
+                <h4 class="font-bold text-sm text-[#333333] hover:text-[#a4413b] mt-1 font-montserrat">
+                  <a href="artikel.html">
+                    Asesor UNESCO Kagum Saksikan Tari Nusantara Wangi Karya Damar Art
+                  </a>
+                </h4>
+                <p class="text-xs text-[#777777] line-clamp-2 mt-1">Apresiasi tinggi dari delegasi internasional UNESCO Geopark atas keaslian dan inovasi koreografi seni tari Banyuwangi...</p>
+              </div>
+              <div class="text-[10px] text-[#999999] flex items-center gap-2 mt-2">
+                <i class="far fa-clock text-[#a4413b]"></i> 2 months ago
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 8. PENGUMUMAN & AGENDA (TWO COLUMNS 1:1 DARI ASLI) ==================== -->
+  <section class="py-12 bg-[#fafafa] border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        
+        <!-- Kolom Kiri: PENGUMUMAN -->
+        <div id="pengumuman">
+          <div class="flex items-center justify-between border-b pb-3 mb-6">
+            <div>
+              <h2 class="text-2xl font-bold text-[#333333] border-l-4 border-[#a4413b] pl-3 font-montserrat">
+                Pengumuman
+              </h2>
+              <div class="w-12 h-1 bg-[#a4413b] mt-1 ml-3 rounded-full"></div>
+            </div>
+            <a href="artikel.html" class="px-4 py-1.5 rounded bg-[#a4413b] text-white text-xs font-semibold hover:bg-[#862924] transition-colors">
+              Lihat Semua
+            </a>
+          </div>
+
+          <div class="space-y-4">
+            <!-- Pengumuman Card 1 -->
+            <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm space-y-2 hover:shadow-md transition-shadow">
+              <h4 class="font-bold text-sm text-[#a4413b] hover:underline font-montserrat">
+                <a href="artikel.html">
+                  WORKSHOP TARI DAMAR ART ROADSHOW 4 KOTA JAWA TIMUR
+                </a>
+              </h4>
+              <p class="text-xs text-[#666666] leading-relaxed">
+                A. Latar Belakang Kegiatan: Workshop Tari Damar Art merupakan program pengembangan kompetensi dan silaturahmi bagi pegiat seni tari tradisional di 4 kota besar Jawa Timur...
+              </p>
+              <div class="flex items-center gap-4 text-[11px] text-[#888888] pt-2 border-t border-gray-100">
+                <span class="flex items-center gap-1"><i class="fas fa-calendar-check text-[#a4413b]"></i> 7 August 2026</span>
+                <span class="flex items-center gap-1"><i class="fas fa-bullhorn text-[#a4413b]"></i> Pengumuman</span>
+              </div>
+            </div>
+
+            <!-- Pengumuman Card 2 -->
+            <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm space-y-2 hover:shadow-md transition-shadow">
+              <h4 class="font-bold text-sm text-[#a4413b] hover:underline font-montserrat">
+                <a href="artikel.html">
+                  Permainan Anak Banyuwangi dalam Balutan Tradisi dan Perkembangan Zaman
+                </a>
+              </h4>
+              <p class="text-xs text-[#666666] leading-relaxed">
+                Rumah Kreatif Damar Art kembali menghadirkan karya tari yang berpijak pada kebudayaan dolanan anak tradisional daerah guna menumbuhkan keceriaan dan nilai budi pekerti luhur...
+              </p>
+              <div class="flex items-center gap-4 text-[11px] text-[#888888] pt-2 border-t border-gray-100">
+                <span class="flex items-center gap-1"><i class="fas fa-calendar-check text-[#a4413b]"></i> 7 August 2026</span>
+                <span class="flex items-center gap-1"><i class="fas fa-bullhorn text-[#a4413b]"></i> Pengumuman</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kolom Kanan: AGENDA -->
+        <div id="agenda">
+          <div class="flex items-center justify-between border-b pb-3 mb-6">
+            <div>
+              <h2 class="text-2xl font-bold text-[#333333] border-l-4 border-[#a4413b] pl-3 font-montserrat">
+                Agenda
+              </h2>
+              <div class="w-12 h-1 bg-[#a4413b] mt-1 ml-3 rounded-full"></div>
+            </div>
+            <a href="artikel.html" class="px-4 py-1.5 rounded bg-[#a4413b] text-white text-xs font-semibold hover:bg-[#862924] transition-colors">
+              Lihat Semua
+            </a>
+          </div>
+
+          <div class="space-y-4">
+            
+            <!-- Agenda Item 1: 22 Sep -->
+            <div class="flex items-center gap-4 p-4 rounded-xl bg-white border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+              <div class="w-16 h-16 rounded-xl border-2 border-[#a4413b] bg-[#faf5f0] flex flex-col items-center justify-center shrink-0">
+                <span class="text-xl font-extrabold text-[#a4413b] font-montserrat leading-none">22</span>
+                <span class="text-[11px] font-semibold text-[#a4413b] uppercase">Sep</span>
+              </div>
+              <div class="flex-1">
+                <h4 class="font-bold text-sm text-[#333333] hover:text-[#a4413b] transition-colors font-montserrat">
+                  Ujian Tengah Semester Ganjil 2024
+                </h4>
+                <div class="flex flex-wrap items-center gap-3 text-xs text-[#777777] mt-1">
+                  <span class="flex items-center gap-1"><i class="far fa-clock text-[#e3b695]"></i> 09.00 WIB</span>
+                  <span class="flex items-center gap-1"><i class="fas fa-map-marker-alt text-[#e3b695]"></i> Balai Desa Sumberberas Muncar</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Agenda Item 2: 25 Aug -->
+            <div class="flex items-center gap-4 p-4 rounded-xl bg-white border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+              <div class="w-16 h-16 rounded-xl border-2 border-[#a4413b] bg-[#faf5f0] flex flex-col items-center justify-center shrink-0">
+                <span class="text-xl font-extrabold text-[#a4413b] font-montserrat leading-none">25</span>
+                <span class="text-[11px] font-semibold text-[#a4413b] uppercase">Aug</span>
+              </div>
+              <div class="flex-1">
+                <h4 class="font-bold text-sm text-[#333333] hover:text-[#a4413b] transition-colors font-montserrat">
+                  Aksara Parsa
+                </h4>
+                <div class="flex flex-wrap items-center gap-3 text-xs text-[#777777] mt-1">
+                  <span class="flex items-center gap-1"><i class="far fa-clock text-[#e3b695]"></i> 19.00 WIB</span>
+                  <span class="flex items-center gap-1"><i class="fas fa-map-marker-alt text-[#e3b695]"></i> KCM Pamekasan</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Agenda Item 3: 23 Aug -->
+            <div class="flex items-center gap-4 p-4 rounded-xl bg-white border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+              <div class="w-16 h-16 rounded-xl border-2 border-[#a4413b] bg-[#faf5f0] flex flex-col items-center justify-center shrink-0">
+                <span class="text-xl font-extrabold text-[#a4413b] font-montserrat leading-none">23</span>
+                <span class="text-[11px] font-semibold text-[#a4413b] uppercase">Aug</span>
+              </div>
+              <div class="flex-1">
+                <h4 class="font-bold text-sm text-[#333333] hover:text-[#a4413b] transition-colors font-montserrat">
+                  Semarak Kemerdekaan ke 79 Bersama Damar Art
+                </h4>
+                <div class="flex flex-wrap items-center gap-3 text-xs text-[#777777] mt-1">
+                  <span class="flex items-center gap-1"><i class="far fa-clock text-[#e3b695]"></i> 10.00 WIB</span>
+                  <span class="flex items-center gap-1"><i class="fas fa-map-marker-alt text-[#e3b695]"></i> Pelataran Rumah Kreatif Damar Art</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 9. BANNER PPDB (PENDAFTARAN PESERTA DIDIK BARU) ==================== -->
+  <section class="py-10 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-[#a4413b] text-white rounded-2xl p-8 sm:p-12 text-center shadow-lg relative overflow-hidden">
+        <div class="absolute -right-10 -bottom-10 w-48 h-48 bg-white/5 rounded-full pointer-events-none"></div>
+        <div class="absolute -left-10 -top-10 w-48 h-48 bg-white/5 rounded-full pointer-events-none"></div>
+        <h2 class="text-2xl sm:text-4xl font-extrabold font-montserrat max-w-3xl mx-auto leading-tight">
+          Komunitas DAMAR ART Membuka Pendaftaran Peserta Didik Baru
+        </h2>
+        <p class="text-sm sm:text-base text-[#e3b695] mt-3 font-medium">
+          Bulan Agustus 2026
+        </p>
+        <div class="mt-6">
+          <a href="kelas-seni.html" class="inline-block px-8 py-3 rounded-full bg-[#e3b695] text-[#a4413b] font-bold text-sm hover:bg-white hover:text-[#a4413b] transition-all shadow-md">
+            Daftar Sekarang
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 10. KELAS SENI (3 CARDS ASLI) ==================== -->
+  <section class="py-12 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex items-center justify-between mb-8 border-b pb-3">
+        <div>
+          <span class="text-xs uppercase font-bold text-[#a4413b] tracking-wider">Program Pembinaan</span>
+          <h2 class="text-2xl font-bold text-[#333333] border-l-4 border-[#a4413b] pl-3 font-montserrat mt-1">
+            Kelas Seni
+          </h2>
+          <div class="w-12 h-1 bg-[#a4413b] mt-1 ml-3 rounded-full"></div>
+        </div>
+        <a href="kelas-seni.html" class="px-4 py-1.5 rounded bg-[#a4413b] text-white text-xs font-semibold hover:bg-[#862924] transition-colors">
+          Lihat Semua
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Kelas 1: Musik Tradisional -->
+        <div class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-lg transition-shadow group flex flex-col justify-between">
+          <div>
+            <div class="relative aspect-[16/10] overflow-hidden bg-gray-100">
+              <img src="https://damarart.com/wp-content/uploads/2023/11/sni-musik-scaled.jpg" alt="Kelas Seni Musik Tradisional" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-3 left-3 px-3 py-1 bg-[#a4413b] text-white text-xs font-bold rounded shadow">
+                Kelas Seni
+              </span>
+            </div>
+            <div class="p-5">
+              <h3 class="text-lg font-bold text-[#a4413b] font-montserrat">
+                Kelas Seni Musik Tradisional
+              </h3>
+              <p class="text-xs text-[#666666] mt-2 leading-relaxed">
+                Pembelajaran mendalam gamelan Banyuwangi, kendang kempul, suling, dan eksplorasi instrumen musik tradisi Blambangan.
+              </p>
+            </div>
+          </div>
+          <div class="p-5 pt-0">
+            <a href="kelas-seni.html" class="block w-full py-2.5 text-center rounded bg-[#a4413b] text-white text-xs font-bold hover:bg-[#862924] transition-colors shadow-sm">
+              Daftar Kelas
+            </a>
+          </div>
+        </div>
+
+        <!-- Kelas 2: Tari Tradisional -->
+        <div class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-lg transition-shadow group flex flex-col justify-between">
+          <div>
+            <div class="relative aspect-[16/10] overflow-hidden bg-gray-100">
+              <img src="https://damarart.com/wp-content/uploads/2023/11/kelas-seni-tari-1.jpg" alt="Kelas Seni Tari Tradisional" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-3 left-3 px-3 py-1 bg-[#a4413b] text-white text-xs font-bold rounded shadow">
+                Kelas Seni
+              </span>
+            </div>
+            <div class="p-5">
+              <h3 class="text-lg font-bold text-[#a4413b] font-montserrat">
+                Kelas Seni Tari Tradisional
+              </h3>
+              <p class="text-xs text-[#666666] mt-2 leading-relaxed">
+                Pelatihan wiraga, wirama, dan wirasa ragam tarian Gandrung, Jejer Padhang Bulan, tarian kreasi Banyuwangi hingga Nusantara.
+              </p>
+            </div>
+          </div>
+          <div class="p-5 pt-0">
+            <a href="kelas-seni.html" class="block w-full py-2.5 text-center rounded bg-[#a4413b] text-white text-xs font-bold hover:bg-[#862924] transition-colors shadow-sm">
+              Daftar Kelas
+            </a>
+          </div>
+        </div>
+
+        <!-- Kelas 3: Sinden -->
+        <div class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-lg transition-shadow group flex flex-col justify-between">
+          <div>
+            <div class="relative aspect-[16/10] overflow-hidden bg-gray-100">
+              <img src="https://damarart.com/wp-content/uploads/2026/08/DAMAR-ART-scaled-e1786049380914.jpg" alt="Kelas Sinden" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-3 left-3 px-3 py-1 bg-[#a4413b] text-white text-xs font-bold rounded shadow">
+                Kelas Seni
+              </span>
+            </div>
+            <div class="p-5">
+              <h3 class="text-lg font-bold text-[#a4413b] font-montserrat">
+                Kelas Sinden
+              </h3>
+              <p class="text-xs text-[#666666] mt-2 leading-relaxed">
+                Teknik vokal khas tembang Osing Banyuwangi, pernapasan diafragma, cengkok sinden Jawa Timur, serta penguasaan bait sastra kuno.
+              </p>
+            </div>
+          </div>
+          <div class="p-5 pt-0">
+            <a href="kelas-seni.html" class="block w-full py-2.5 text-center rounded bg-[#a4413b] text-white text-xs font-bold hover:bg-[#862924] transition-colors shadow-sm">
+              Daftar Kelas
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 11. DAFTAR PENGURUS & PELATIH DAMAR ART (4 CARDS ASLI) ==================== -->
+  <section id="pengurus" class="py-14 bg-[#faf5f0]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex items-center justify-between mb-8 border-b border-gray-200 pb-3">
+        <div>
+          <span class="text-xs uppercase font-bold text-[#a4413b] tracking-wider">Struktur Organisasi</span>
+          <h2 class="text-2xl font-bold text-[#333333] border-l-4 border-[#a4413b] pl-3 font-montserrat mt-1">
+            Daftar Pengurus &amp; Pelatih DAMAR ART
+          </h2>
+          <div class="w-12 h-1 bg-[#a4413b] mt-1 ml-3 rounded-full"></div>
+        </div>
+        <a href="tentang-kami.html#pengurus" class="px-4 py-1.5 rounded bg-[#a4413b] text-white text-xs font-semibold hover:bg-[#862924] transition-colors">
+          Lihat Semua
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Pengurus 1: Achzana Ilhamy, M.Sn -->
+        <div class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm p-5 text-center space-y-3 hover:shadow-md transition-shadow">
+          <div class="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-[#e3b695] bg-gray-50 shadow-inner">
+            <img src="https://damarart.com/wp-content/uploads/elementor/thumbs/Screenshot-543-e1786047375192-rriu9d5l0i8wjkyrhlhiwiknauq0qpwaxiny2obmdw.png" alt="Achzana Ilhamy, M.Sn" class="w-full h-full object-cover">
+          </div>
+          <div>
+            <h3 class="font-bold text-base text-[#a4413b] font-montserrat">Achzana Ilhamy, M.Sn</h3>
+            <p class="text-xs text-[#666666] font-medium mt-1">Ketua Komunitas Damar Art</p>
+          </div>
+          <div class="flex items-center justify-center gap-3 pt-2">
+            <a href="mailto:info@damarart.com" class="w-8 h-8 rounded-full bg-[#a4413b] text-white flex items-center justify-center text-xs hover:bg-[#862924] transition-colors shadow">
+              <i class="fas fa-envelope"></i>
+            </a>
+            <a href="tel:082140704036" class="w-8 h-8 rounded-full bg-[#a4413b] text-white flex items-center justify-center text-xs hover:bg-[#862924] transition-colors shadow">
+              <i class="fas fa-phone-alt"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Pengurus 2: Anggi Dinda Noviana -->
+        <div class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm p-5 text-center space-y-3 hover:shadow-md transition-shadow">
+          <div class="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-[#e3b695] bg-gray-50 shadow-inner">
+            <img src="https://damarart.com/wp-content/uploads/elementor/thumbs/anggi-rrivg4t7z4sksuubr30fcq1obzx8yxomt79a5wwr9w.jpg" alt="Anggi Dinda Noviana" class="w-full h-full object-cover">
+          </div>
+          <div>
+            <h3 class="font-bold text-base text-[#a4413b] font-montserrat">Anggi Dinda Noviana</h3>
+            <p class="text-xs text-[#666666] font-medium mt-1">Pelatih Tari</p>
+          </div>
+          <div class="flex items-center justify-center gap-3 pt-2">
+            <a href="mailto:info@damarart.com" class="w-8 h-8 rounded-full bg-[#a4413b] text-white flex items-center justify-center text-xs hover:bg-[#862924] transition-colors shadow">
+              <i class="fas fa-envelope"></i>
+            </a>
+            <a href="tel:082140704036" class="w-8 h-8 rounded-full bg-[#a4413b] text-white flex items-center justify-center text-xs hover:bg-[#862924] transition-colors shadow">
+              <i class="fas fa-phone-alt"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Pengurus 3: Arletha Bhineka Warmadewi Wahyuning Mulyanto -->
+        <div class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm p-5 text-center space-y-3 hover:shadow-md transition-shadow">
+          <div class="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-[#e3b695] bg-gray-50 shadow-inner">
+            <img src="https://damarart.com/wp-content/uploads/elementor/thumbs/WhatsApp-Image-2026-07-01-at-19.01.01-rriuig9f2uoorvrmfivp08120xxr5dyw6hox2yum8k.jpeg" alt="Arletha Bhineka Warmadewi" class="w-full h-full object-cover">
+          </div>
+          <div>
+            <h3 class="font-bold text-sm text-[#a4413b] font-montserrat leading-tight line-clamp-2">Arletha Bhineka Warmadewi Wahyuning Mulyanto</h3>
+            <p class="text-xs text-[#666666] font-medium mt-1">Pelatih Tari</p>
+          </div>
+          <div class="flex items-center justify-center gap-3 pt-2">
+            <a href="mailto:info@damarart.com" class="w-8 h-8 rounded-full bg-[#a4413b] text-white flex items-center justify-center text-xs hover:bg-[#862924] transition-colors shadow">
+              <i class="fas fa-envelope"></i>
+            </a>
+            <a href="tel:082140704036" class="w-8 h-8 rounded-full bg-[#a4413b] text-white flex items-center justify-center text-xs hover:bg-[#862924] transition-colors shadow">
+              <i class="fas fa-phone-alt"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Pengurus 4: Bunga Shintia Ramadani -->
+        <div class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm p-5 text-center space-y-3 hover:shadow-md transition-shadow">
+          <div class="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-[#e3b695] bg-gray-50 shadow-inner">
+            <img src="https://damarart.com/wp-content/uploads/elementor/thumbs/DSC_3611-qg04arl2iavsa2kkr9b9xm5jkrssn00s23rd6wl250.jpg" alt="Bunga Shintia Ramadani" class="w-full h-full object-cover">
+          </div>
+          <div>
+            <h3 class="font-bold text-base text-[#a4413b] font-montserrat">Bunga Shintia Ramadani</h3>
+            <p class="text-xs text-[#666666] font-medium mt-1">Pelatih Tari</p>
+          </div>
+          <div class="flex items-center justify-center gap-3 pt-2">
+            <a href="mailto:info@damarart.com" class="w-8 h-8 rounded-full bg-[#a4413b] text-white flex items-center justify-center text-xs hover:bg-[#862924] transition-colors shadow">
+              <i class="fas fa-envelope"></i>
+            </a>
+            <a href="tel:082140704036" class="w-8 h-8 rounded-full bg-[#a4413b] text-white flex items-center justify-center text-xs hover:bg-[#862924] transition-colors shadow">
+              <i class="fas fa-phone-alt"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 12. KARYA - KARYA VIDEO DAMAR ART (6 VIDEOS ASLI) ==================== -->
+  <section id="karya" class="py-14 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex items-center justify-between mb-8 border-b pb-3">
+        <div>
+          <span class="text-xs uppercase font-bold text-[#a4413b] tracking-wider">Karya - Karya</span>
+          <h2 class="text-2xl font-bold text-[#333333] border-l-4 border-[#a4413b] pl-3 font-montserrat mt-1">
+            Video DAMAR ART
+          </h2>
+          <div class="w-12 h-1 bg-[#a4413b] mt-1 ml-3 rounded-full"></div>
+        </div>
+        <a href="https://www.youtube.com/@damarart" target="_blank" class="px-4 py-1.5 rounded bg-[#a4413b] text-white text-xs font-semibold hover:bg-[#862924] transition-colors">
+          Video Lainnya
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Video 1: TARI NUSANTARA WANGI -->
+        <div class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+          <div class="video-responsive">
+            <iframe src="https://www.youtube.com/embed/t_LvXKLkso8" title="TARI NUSANTARA WANGI" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="p-4 bg-white">
+            <h4 class="font-bold text-sm text-[#a4413b] font-montserrat">TARI NUSANTARA WANGI</h4>
+            <p class="text-[11px] text-[#777777] mt-1">Produksi Karya Tari Damar Art</p>
+          </div>
+        </div>
+
+        <!-- Video 2: LAGU ESEME GANDRUNG -->
+        <div class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+          <div class="video-responsive">
+            <iframe src="https://www.youtube.com/embed/WCwvpMRKzv0" title="LAGU ESEME GANDRUNG" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="p-4 bg-white">
+            <h4 class="font-bold text-sm text-[#a4413b] font-montserrat">LAGU ESEME GANDRUNG</h4>
+            <p class="text-[11px] text-[#777777] mt-1">Karya Lagu & Musik Tradisi Banyuwangi</p>
+          </div>
+        </div>
+
+        <!-- Video 3: LAGU JANGKAH -->
+        <div class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+          <div class="video-responsive">
+            <iframe src="https://www.youtube.com/embed/4mnbWX0tPK4" title="LAGU JANGKAH" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="p-4 bg-white">
+            <h4 class="font-bold text-sm text-[#a4413b] font-montserrat">LAGU JANGKAH</h4>
+            <p class="text-[11px] text-[#777777] mt-1">Karya Musik Damar Art</p>
+          </div>
+        </div>
+
+        <!-- Video 4: SENDRATARI MERAS GANDRUNG -->
+        <div class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+          <div class="video-responsive">
+            <iframe src="https://www.youtube.com/embed/dE4c9drwHDc" title="SENDRATARI MERAS GANDRUNG" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="p-4 bg-white">
+            <h4 class="font-bold text-sm text-[#a4413b] font-montserrat">SENDRATARI MERAS GANDRUNG</h4>
+            <p class="text-[11px] text-[#777777] mt-1">Pertunjukan Sendratari Kolosal Banyuwangi</p>
+          </div>
+        </div>
+
+        <!-- Video 5: DRAMA MUSIKAL REMPEG JOGOPATI -->
+        <div class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+          <div class="video-responsive">
+            <iframe src="https://www.youtube.com/embed/l8skqLvSsdM" title="DRAMA MUSIKAL REMPEG JOGOPATI" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="p-4 bg-white">
+            <h4 class="font-bold text-sm text-[#a4413b] font-montserrat">DRAMA MUSIKAL REMPEG JOGOPATI</h4>
+            <p class="text-[11px] text-[#777777] mt-1">Kisah Kepahlawanan Perang Bayu</p>
+          </div>
+        </div>
+
+        <!-- Video 6: KARYA MUSIK GUYUB RUKUN -->
+        <div class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+          <div class="video-responsive">
+            <iframe src="https://www.youtube.com/embed/gax76L5Y5tA" title="KARYA MUSIK GUYUB RUKUN" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="p-4 bg-white">
+            <h4 class="font-bold text-sm text-[#a4413b] font-montserrat">KARYA MUSIK GUYUB RUKUN</h4>
+            <p class="text-[11px] text-[#777777] mt-1">Harmoni Instrumen Tradisional Nusantara</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 13. FASILITAS DAMAR ART (4 CARDS ASLI) ==================== -->
+  <section id="fasilitas" class="py-14 bg-[#fafafa] border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex items-center justify-between mb-8 border-b pb-3">
+        <div>
+          <span class="text-xs uppercase font-bold text-[#a4413b] tracking-wider">Fasilitas Sanggar</span>
+          <h2 class="text-2xl font-bold text-[#333333] border-l-4 border-[#a4413b] pl-3 font-montserrat mt-1">
+            Fasilitas DAMAR ART
+          </h2>
+          <div class="w-12 h-1 bg-[#a4413b] mt-1 ml-3 rounded-full"></div>
+        </div>
+        <a href="tentang-kami.html#fasilitas" class="px-4 py-1.5 rounded bg-[#a4413b] text-white text-xs font-semibold hover:bg-[#862924] transition-colors">
+          Lihat Semua
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Fasilitas 1: Studio Musik -->
+        <div class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-md transition-shadow group flex flex-col justify-between">
+          <div>
+            <div class="relative aspect-[4/3] overflow-hidden bg-gray-100">
+              <img src="https://damarart.com/wp-content/uploads/2026/08/WhatsApp-Image-2026-05-14-at-10.20.01.jpeg" alt="Studio Musik" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-2 left-2 px-2.5 py-0.5 bg-[#e3b695] text-[#a4413b] text-[10px] font-bold rounded">Fasilitas</span>
+            </div>
+            <div class="p-4 space-y-1">
+              <h3 class="font-bold text-base text-[#a4413b] font-montserrat">Studio Musik</h3>
+              <p class="text-xs text-[#666666]">Laboratorium Kreatif Musik Rumah Kreatif Damar Art</p>
+            </div>
+          </div>
+          <div class="p-4 pt-0">
+            <span class="text-[11px] text-[#e3b695] font-semibold">Tersedia untuk Latihan</span>
+          </div>
+        </div>
+
+        <!-- Fasilitas 2: Studio Tari -->
+        <div class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-md transition-shadow group flex flex-col justify-between">
+          <div>
+            <div class="relative aspect-[4/3] overflow-hidden bg-gray-100">
+              <img src="https://damarart.com/wp-content/uploads/2023/12/FOTO-TAMPAK-DEPAN-TEMPAT-RUMAH-KREATIF-DAMAR-ART.jpeg" alt="Studio Tari" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-2 left-2 px-2.5 py-0.5 bg-[#e3b695] text-[#a4413b] text-[10px] font-bold rounded">Fasilitas</span>
+            </div>
+            <div class="p-4 space-y-1">
+              <h3 class="font-bold text-base text-[#a4413b] font-montserrat">Studio Tari</h3>
+              <p class="text-xs text-[#666666]">Ruang Laboratorium Tari Rumah Kreatif Damar Art</p>
+            </div>
+          </div>
+          <div class="p-4 pt-0">
+            <span class="text-[11px] text-[#e3b695] font-semibold">Tersedia untuk Latihan</span>
+          </div>
+        </div>
+
+        <!-- Fasilitas 3: Kostum -->
+        <div class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-md transition-shadow group flex flex-col justify-between">
+          <div>
+            <div class="relative aspect-[4/3] overflow-hidden bg-gray-100">
+              <img src="https://damarart.com/wp-content/uploads/2023/12/Picture11.jpg" alt="Kostum" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-2 left-2 px-2.5 py-0.5 bg-[#e3b695] text-[#a4413b] text-[10px] font-bold rounded">Fasilitas</span>
+            </div>
+            <div class="p-4 space-y-1">
+              <h3 class="font-bold text-base text-[#a4413b] font-montserrat">Kostum</h3>
+              <p class="text-xs text-[#666666]">Kostum Penari Lengkap Tradisional & Modern</p>
+            </div>
+          </div>
+          <div class="p-4 pt-0">
+            <span class="text-[11px] text-[#e3b695] font-semibold">Tersedia untuk Disewa</span>
+          </div>
+        </div>
+
+        <!-- Fasilitas 4: Gamelan -->
+        <div class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-md transition-shadow group flex flex-col justify-between">
+          <div>
+            <div class="relative aspect-[4/3] overflow-hidden bg-gray-100">
+              <img src="https://damarart.com/wp-content/uploads/2023/12/WhatsApp-Image-2023-12-05-at-10.30.49.jpeg" alt="Gamelan" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-2 left-2 px-2.5 py-0.5 bg-[#e3b695] text-[#a4413b] text-[10px] font-bold rounded">Fasilitas</span>
+            </div>
+            <div class="p-4 space-y-1">
+              <h3 class="font-bold text-base text-[#a4413b] font-montserrat">Gamelan</h3>
+              <p class="text-xs text-[#666666]">Gamelan Lengkap Berstandar Seni Pertunjukan</p>
+            </div>
+          </div>
+          <div class="p-4 pt-0">
+            <span class="text-[11px] text-[#e3b695] font-semibold">Tersedia untuk Sanggar</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 14. LINK TERKAIT (PARTNER CAROUSEL LOGOS) ==================== -->
+  <section class="py-12 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-8">
+        <h2 class="text-2xl font-bold text-[#333333] font-montserrat">
+          Link Terkait
+        </h2>
+        <div class="w-16 h-1 bg-[#a4413b] mx-auto mt-2 rounded-full"></div>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 items-center justify-items-center">
+        
+        <!-- Partner 1: Disbudpar Jatim -->
+        <a href="https://disbudpar.jatimprov.go.id/" target="_blank" class="p-4 rounded-xl border border-gray-100 hover:border-[#e3b695] hover:shadow-md transition-all flex items-center justify-center w-full h-28 bg-[#fafafa]">
+          <img src="https://damarart.com/wp-content/uploads/2023/12/channels4_profile.jpg" alt="Disbudpar Jatim" class="max-h-16 max-w-full object-contain filter grayscale hover:grayscale-0 transition-all">
+        </a>
+
+        <!-- Partner 2: SPM Banyuwangi -->
+        <a href="https://spm.banyuwangikab.go.id/skpd/dinas-kebudayaan-dan-pariwisata" target="_blank" class="p-4 rounded-xl border border-gray-100 hover:border-[#e3b695] hover:shadow-md transition-all flex items-center justify-center w-full h-28 bg-[#fafafa]">
+          <img src="https://damarart.com/wp-content/uploads/2023/12/136139990_452541429091906_4918885550540406961_n.jpg" alt="Dinas Kebudayaan dan Pariwisata Banyuwangi" class="max-h-16 max-w-full object-contain filter grayscale hover:grayscale-0 transition-all">
+        </a>
+
+        <!-- Partner 3: Banyuwangi Tourism -->
+        <a href="https://banyuwangitourism.com/" target="_blank" class="p-4 rounded-xl border border-gray-100 hover:border-[#e3b695] hover:shadow-md transition-all flex items-center justify-center w-full h-28 bg-[#fafafa]">
+          <img src="https://damarart.com/wp-content/uploads/2023/12/329586355_2069396379911876_5922004619743048147_n.jpg" alt="Banyuwangi Tourism" class="max-h-16 max-w-full object-contain filter grayscale hover:grayscale-0 transition-all">
+        </a>
+
+        <!-- Partner 4: DKB Banyuwangi -->
+        <a href="https://dkb.or.id/" target="_blank" class="p-4 rounded-xl border border-gray-100 hover:border-[#e3b695] hover:shadow-md transition-all flex items-center justify-center w-full h-28 bg-[#fafafa]">
+          <img src="https://damarart.com/wp-content/uploads/2023/12/300781169_497235982407038_415139196994273153_n.jpg" alt="Dewan Kesenian Blambangan" class="max-h-16 max-w-full object-contain filter grayscale hover:grayscale-0 transition-all">
+        </a>
+
+        <!-- Partner 5: Cak Durasim -->
+        <a href="https://cakdurasim.com/" target="_blank" class="p-4 rounded-xl border border-gray-100 hover:border-[#e3b695] hover:shadow-md transition-all flex items-center justify-center w-full h-28 bg-[#fafafa]">
+          <img src="https://damarart.com/wp-content/uploads/2023/12/cak-durasim.jpg" alt="Taman Budaya Cak Durasim" class="max-h-16 max-w-full object-contain filter grayscale hover:grayscale-0 transition-all">
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 15. SUBSCRIBES OUR NEWSLETTER ==================== -->
+  <section class="bg-[#e3b695] py-8 text-[#333333]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div>
+          <h3 class="text-xl sm:text-2xl font-extrabold text-[#a4413b] font-montserrat">
+            Subscribes Our Newsletter
+          </h3>
+          <p class="text-xs sm:text-sm text-[#444444] mt-1">
+            Dapatkan informasi agenda pergelaran tari, workshop, dan pendaftaran kelas seni terbaru.
+          </p>
+        </div>
+        <form onsubmit="handleNewsletterSubmit(event)" class="w-full md:w-auto flex flex-col sm:flex-row items-center gap-3">
+          <input type="email" id="newsletterEmail" required placeholder="Masukkan email Anda..." class="w-full sm:w-72 px-4 py-2.5 rounded-full text-xs text-[#333333] border border-[#a4413b]/40 focus:outline-none focus:ring-2 focus:ring-[#a4413b] bg-white">
+          <button type="submit" class="w-full sm:w-auto px-6 py-2.5 rounded-full bg-[#a4413b] text-white text-xs font-bold hover:bg-[#862924] transition-colors shadow">
+            Subscribe
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 16. FOOTER ASLI DAMAR ART ==================== -->
+  <footer class="bg-[#a4413b] text-white pt-14 pb-8 border-t-4 border-[#e3b695]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-10 border-b border-white/20">
+        
+        <!-- Kolom 1: Profil & Tagline -->
+        <div class="space-y-4">
+          <div class="flex items-center gap-2">
+            <img src="https://damarart.com/wp-content/uploads/2023/10/penyun-news-4-1-hitam-tulisan-copy-lans1-1.png" alt="Damar Art Logo" class="h-10 w-auto brightness-0 invert">
+          </div>
+          <p class="text-xs text-[#e3b695] italic font-medium">"Tertiup Tidak Padam Terhempas Tetap Menghidupi"</p>
+          <p class="text-xs text-gray-200 leading-relaxed">
+            Komunitas seni kreatif Banyuwangi yang berfokus pada pelestarian seni tari, musik, teater, serta pembinaan generasi muda berkarakter luhur.
+          </p>
+        </div>
+
+        <!-- Kolom 2: Tautan Cepat -->
+        <div class="space-y-3">
+          <h4 class="font-bold text-sm text-[#e3b695] uppercase tracking-wider font-montserrat">Tautan Cepat</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="index.html" class="hover:text-[#e3b695] transition-colors">Beranda</a></li>
+            <li><a href="#sambutan" class="hover:text-[#e3b695] transition-colors">Sambutan Ketua</a></li>
+            <li><a href="tentang-kami.html" class="hover:text-[#e3b695] transition-colors">Sejarah</a></li>
+            <li><a href="tentang-kami.html" class="hover:text-[#e3b695] transition-colors">Tentang Kami</a></li>
+            <li><a href="tentang-kami.html#visi-misi" class="hover:text-[#e3b695] transition-colors">Visi dan Misi</a></li>
+          </ul>
+        </div>
+
+        <!-- Kolom 3: Layanan & Informasi -->
+        <div class="space-y-3">
+          <h4 class="font-bold text-sm text-[#e3b695] uppercase tracking-wider font-montserrat">Layanan</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="raport.html" class="hover:text-[#e3b695] transition-colors">Raport Digital Siswa</a></li>
+            <li><a href="perijinan-karya.html" class="hover:text-[#e3b695] transition-colors">Perijinan Karya Tari/Musik</a></li>
+            <li><a href="kelas-seni.html" class="hover:text-[#e3b695] transition-colors">Kelas Seni Tradisi</a></li>
+            <li><a href="#fasilitas" class="hover:text-[#e3b695] transition-colors">Fasilitas Sanggar</a></li>
+            <li><a href="https://damarart.com/jurnal-wanci-kinangan" target="_blank" class="hover:text-[#e3b695] transition-colors">Jurnal Wanci Kinangan ↗</a></li>
+            <li><a href="login.html" class="hover:text-[#e3b695] transition-colors">Login Operator</a></li>
+          </ul>
+        </div>
+
+        <!-- Kolom 4: Hubungi & Media Sosial -->
+        <div class="space-y-3">
+          <h4 class="font-bold text-sm text-[#e3b695] uppercase tracking-wider font-montserrat">Hubungi Kami</h4>
+          <p class="text-xs text-gray-200 leading-relaxed">
+            Dsn. Sumberayu, RT 02 / RW 02, Ds. Sumberberas, Kec. Muncar, Kab. Banyuwangi, Jawa Timur - 68472
+          </p>
+          <p class="text-xs font-semibold text-white">
+            WA / Telp: <a href="tel:082140704036" class="hover:text-[#e3b695] font-mono">082140704036</a>
+          </p>
+          <p class="text-xs text-gray-200">
+            Email: <a href="mailto:info@damarart.com" class="hover:text-[#e3b695]">info@damarart.com</a>
+          </p>
+          
+          <div class="flex items-center gap-3 pt-2">
+            <a href="https://wa.me/6282140704036" target="_blank" class="w-8 h-8 rounded-full bg-[#e3b695] text-[#a4413b] flex items-center justify-center hover:bg-white transition-colors shadow">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://www.instagram.com/" target="_blank" class="w-8 h-8 rounded-full bg-[#e3b695] text-[#a4413b] flex items-center justify-center hover:bg-white transition-colors shadow">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.youtube.com/@damarart" target="_blank" class="w-8 h-8 rounded-full bg-[#e3b695] text-[#a4413b] flex items-center justify-center hover:bg-white transition-colors shadow">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Copyright Bar -->
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-300 gap-2">
+        <p>Copyright &copy; 2026 Damar Art | Powered by Damar Art</p>
+        <p class="text-[11px] text-[#e3b695]">Versi Codingan HTML5 + Tailwind CSS (Isolated Sandbox)</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==================== 17. MODAL POPUP LAYANAN UNGGULAN DAMAR ART ==================== -->
+  <div id="layananModal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl relative border-2 border-[#e3b695] animate-scale-up">
+      <button onclick="closeLayananModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-gray-100 hover:bg-[#a4413b] hover:text-white text-gray-600 flex items-center justify-center transition-colors">
+        <i class="fas fa-times"></i>
+      </button>
+
+      <div class="text-center mb-6">
+        <h2 class="text-xl sm:text-2xl font-bold text-[#a4413b] font-montserrat">
+          Layanan Unggulan DAMAR ART
+        </h2>
+        <div class="w-16 h-1 bg-[#e3b695] mx-auto mt-2 rounded-full"></div>
+        <p class="text-xs text-gray-500 mt-1">Pilih menu layanan cepat sanggar Rumah Kreatif Damar Art</p>
+      </div>
+
+      <div class="grid grid-cols-3 sm:grid-cols-3 gap-4 text-center">
+        
+        <a href="https://damarart.com/jurnal-wanci-kinangan" target="_blank" onclick="closeLayananModal()" class="flex flex-col items-center p-3 rounded-xl border border-gray-100 hover:border-[#e3b695] hover:bg-[#faf5f0] transition-colors">
+          <div class="w-12 h-12 rounded-full border-2 border-[#e3b695] p-1 mb-2 flex items-center justify-center bg-white shadow-sm">
+            <img src="https://damarart.com/wp-content/uploads/2026/09/ChatGPT-Image-11-Sep-2026-08.45.23-1.png" alt="Jurnal" class="w-10 h-10 object-contain rounded-full">
+          </div>
+          <span class="text-xs font-semibold text-[#a4413b]">Jurnal</span>
+        </a>
+
+        <a href="perijinan-karya.html" onclick="closeLayananModal()" class="flex flex-col items-center p-3 rounded-xl border border-gray-100 hover:border-[#e3b695] hover:bg-[#faf5f0] transition-colors">
+          <div class="w-12 h-12 rounded-full border-2 border-[#e3b695] p-1 mb-2 flex items-center justify-center bg-white shadow-sm">
+            <img src="https://damarart.com/wp-content/uploads/2026/08/Desain-tanpa-judul-25.png" alt="Perijinan" class="w-10 h-10 object-contain rounded-full">
+          </div>
+          <span class="text-xs font-semibold text-[#a4413b]">Perijinan</span>
+        </a>
+
+        <a href="raport.html" onclick="closeLayananModal()" class="flex flex-col items-center p-3 rounded-xl border border-gray-100 hover:border-[#e3b695] hover:bg-[#faf5f0] transition-colors">
+          <div class="w-12 h-12 rounded-full border-2 border-[#e3b695] p-1 mb-2 flex items-center justify-center bg-white shadow-sm">
+            <img src="https://damarart.com/wp-content/uploads/2024/01/raport-1.png" alt="Raport" class="w-10 h-10 object-contain">
+          </div>
+          <span class="text-xs font-semibold text-[#a4413b]">Raport</span>
+        </a>
+
+        <a href="#sambutan" onclick="closeLayananModal()" class="flex flex-col items-center p-3 rounded-xl border border-gray-100 hover:border-[#e3b695] hover:bg-[#faf5f0] transition-colors">
+          <div class="w-12 h-12 rounded-full border-2 border-[#e3b695] p-1 mb-2 flex items-center justify-center bg-white shadow-sm">
+            <img src="https://damarart.com/wp-content/uploads/2023/12/sambutan.png" alt="Sambutan" class="w-10 h-10 object-contain">
+          </div>
+          <span class="text-xs font-semibold text-[#a4413b]">Sambutan</span>
+        </a>
+
+        <a href="tentang-kami.html" onclick="closeLayananModal()" class="flex flex-col items-center p-3 rounded-xl border border-gray-100 hover:border-[#e3b695] hover:bg-[#faf5f0] transition-colors">
+          <div class="w-12 h-12 rounded-full border-2 border-[#e3b695] p-1 mb-2 flex items-center justify-center bg-white shadow-sm">
+            <img src="https://damarart.com/wp-content/uploads/2023/12/tentang.png" alt="About us" class="w-10 h-10 object-contain">
+          </div>
+          <span class="text-xs font-semibold text-[#a4413b]">About us</span>
+        </a>
+
+        <a href="kelas-seni.html" onclick="closeLayananModal()" class="flex flex-col items-center p-3 rounded-xl border border-gray-100 hover:border-[#e3b695] hover:bg-[#faf5f0] transition-colors">
+          <div class="w-12 h-12 rounded-full border-2 border-[#e3b695] p-1 mb-2 flex items-center justify-center bg-white shadow-sm">
+            <img src="https://damarart.com/wp-content/uploads/2023/12/kelas-seni.png" alt="Kelas" class="w-10 h-10 object-contain">
+          </div>
+          <span class="text-xs font-semibold text-[#a4413b]">Kelas</span>
+        </a>
+
+        <a href="#fasilitas" onclick="closeLayananModal()" class="flex flex-col items-center p-3 rounded-xl border border-gray-100 hover:border-[#e3b695] hover:bg-[#faf5f0] transition-colors">
+          <div class="w-12 h-12 rounded-full border-2 border-[#e3b695] p-1 mb-2 flex items-center justify-center bg-white shadow-sm">
+            <img src="https://damarart.com/wp-content/uploads/2023/12/fasilitas-1.png" alt="Fasilitas" class="w-10 h-10 object-contain">
+          </div>
+          <span class="text-xs font-semibold text-[#a4413b]">Fasilitas</span>
+        </a>
+
+        <a href="#karya" onclick="closeLayananModal()" class="flex flex-col items-center p-3 rounded-xl border border-gray-100 hover:border-[#e3b695] hover:bg-[#faf5f0] transition-colors">
+          <div class="w-12 h-12 rounded-full border-2 border-[#e3b695] p-1 mb-2 flex items-center justify-center bg-white shadow-sm">
+            <img src="https://damarart.com/wp-content/uploads/2023/12/karya.png" alt="Karya" class="w-10 h-10 object-contain">
+          </div>
+          <span class="text-xs font-semibold text-[#a4413b]">Karya</span>
+        </a>
+
+        <a href="#pengurus" onclick="closeLayananModal()" class="flex flex-col items-center p-3 rounded-xl border border-gray-100 hover:border-[#e3b695] hover:bg-[#faf5f0] transition-colors">
+          <div class="w-12 h-12 rounded-full border-2 border-[#e3b695] p-1 mb-2 flex items-center justify-center bg-white shadow-sm">
+            <img src="https://damarart.com/wp-content/uploads/2023/12/Pengurus.png" alt="Pengurus" class="w-10 h-10 object-contain">
+          </div>
+          <span class="text-xs font-semibold text-[#a4413b]">Pengurus</span>
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

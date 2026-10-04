@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Montserrat:wght@600;700;800;900&family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+  --primary-terracotta: #a4413b;
+  --primary-dark: #862924;
+  --secondary-peach: #e3b695;
+  --secondary-dark: #d49e77;
+  --secondary-light: #fcf6f0;
+  --text-dark: #333333;
+  --text-muted: #666666;
+  --bg-light: #fbfbfb;
+  --bg-warm: #faf5f0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-dark);
+  background-color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: 'Montserrat', 'Poppins', sans-serif;
+}
+
+/* Color utility classes matching original damarart.com */
+.bg-terracotta { background-color: #a4413b; }
+.bg-terracotta-dark { background-color: #862924; }
+.text-terracotta { color: #a4413b; }
+.border-terracotta { border-color: #a4413b; }
+
+.bg-peach { background-color: #e3b695; }
+.bg-peach-light { background-color: #faf5f0; }
+.text-peach { color: #e3b695; }
+.border-peach { border-color: #e3b695; }
+
+/* Buttons */
+.btn-terracotta {
+  background-color: #a4413b;
+  color: #ffffff;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.btn-terracotta:hover {
+  background-color: #862924;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(164, 65, 59, 0.25);
+}
+
+.btn-peach {
+  background-color: #e3b695;
+  color: #a4413b;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.btn-peach:hover {
+  background-color: #ffffff;
+  color: #a4413b;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Dropdown hover behavior */
+.nav-dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Section Title Decorative Line */
+.section-title {
+  position: relative;
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: #333333;
+}
+
+.section-divider {
+  width: 50px;
+  height: 3px;
+  background-color: #a4413b;
+  margin-top: 6px;
+  margin-bottom: 20px;
+  border-radius: 2px;
+}
+
+.section-divider-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Custom Scrollbar for horizontal sliders */
+.custom-scroll::-webkit-scrollbar {
+  height: 6px;
+  background-color: #f1f1f1;
+}
+.custom-scroll::-webkit-scrollbar-thumb {
+  background-color: #e3b695;
+  border-radius: 3px;
+}
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+  background-color: #a4413b;
+}
+
+/* Video card iframe wrapper */
+.video-responsive {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 8px 8px 0 0;
+}
+.video-responsive iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Quick Menu Icons Hover Animation */
+.quick-menu-icon {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+}
+.quick-menu-icon:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 8px 16px rgba(227, 182, 149, 0.35);
+}

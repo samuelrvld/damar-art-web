@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Operator - Damar Art (Local Project)</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-[#f4f3f0] text-[#333333] flex min-h-screen">
+
+  <!-- ==================== SIDEBAR ==================== -->
+  <aside class="w-64 bg-[#a4413b] text-white flex flex-col justify-between hidden md:flex shadow-xl z-20">
+    <div>
+      <!-- Brand Logo -->
+      <div class="p-6 border-b border-[#8e322d] flex items-center gap-3">
+        <div class="w-9 h-9 rounded-lg bg-[#e3b695] text-[#a4413b] flex items-center justify-center font-bold text-lg">
+          D
+        </div>
+        <div>
+          <h2 class="font-bold text-sm tracking-wider uppercase font-['Montserrat']">Damar Art</h2>
+          <span class="text-[10px] text-[#e3b695]">Panel Operator Lokal</span>
+        </div>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="p-4 space-y-1 text-xs font-medium">
+        <a href="#ringkasan" onclick="showTab('ringkasan')" class="sidebar-link active flex items-center gap-3 px-4 py-3 rounded-xl bg-[#8e322d] text-[#e3b695] font-bold transition-all">
+          <i class="fas fa-chart-pie w-4 text-center"></i>
+          <span>Ringkasan Data</span>
+        </a>
+        <a href="#artikel" onclick="showTab('artikel')" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-[#8e322d] hover:text-[#e3b695] transition-all text-gray-200">
+          <i class="fas fa-newspaper w-4 text-center"></i>
+          <span>Kelola Artikel & Berita</span>
+        </a>
+        <a href="#pendaftar" onclick="showTab('pendaftar')" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-[#8e322d] hover:text-[#e3b695] transition-all text-gray-200">
+          <i class="fas fa-user-graduate w-4 text-center"></i>
+          <span>Data Pendaftar PPDB</span>
+        </a>
+        <a href="#karya" onclick="showTab('karya')" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-[#8e322d] hover:text-[#e3b695] transition-all text-gray-200">
+          <i class="fas fa-theater-masks w-4 text-center"></i>
+          <span>Koleksi Karya Tari/Musik</span>
+        </a>
+      </nav>
+    </div>
+
+    <!-- Bottom Profile & Logout -->
+    <div class="p-4 border-t border-[#8e322d]">
+      <div class="flex items-center gap-3 mb-3 px-2">
+        <div class="w-8 h-8 rounded-full bg-[#e3b695] text-[#a4413b] flex items-center justify-center font-bold text-xs">
+          OP
+        </div>
+        <div class="overflow-hidden">
+          <p class="text-xs font-bold truncate">Operator Demo</p>
+          <p class="text-[10px] text-[#e3b695] truncate">operator@damarart.local</p>
+        </div>
+      </div>
+      <a href="index.html" class="flex items-center justify-center gap-2 w-full py-2 rounded-lg bg-[#8e322d] hover:bg-[#78231e] text-xs font-semibold text-white transition-colors">
+        <i class="fas fa-arrow-left"></i>
+        <span>Kembali ke Website</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- ==================== MAIN CONTENT ==================== -->
+  <main class="flex-1 flex flex-col min-h-screen overflow-y-auto">
+    
+    <!-- Top Header -->
+    <header class="bg-white border-b border-gray-200 h-16 flex items-center justify-between px-6 sticky top-0 z-10">
+      <div class="flex items-center gap-3">
+        <h1 class="text-base font-bold text-[#333333] font-['Montserrat']" id="pageTitle">Dashboard Operator</h1>
+        <span class="text-[11px] px-2.5 py-0.5 rounded-full bg-[#e3b695]/40 text-[#a4413b] font-semibold">Uji Coba Lokal</span>
+      </div>
+      <div class="flex items-center gap-4 text-xs">
+        <a href="index.html" class="text-[#a4413b] hover:underline font-semibold flex items-center gap-1">
+          <i class="fas fa-globe"></i>
+          <span>Lihat Website</span>
+        </a>
+        <button onclick="logout()" class="px-3 py-1.5 rounded-lg bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold transition-colors">
+          Logout
+        </button>
+      </div>
+    </header>
+
+    <div class="p-6 sm:p-8 space-y-8 flex-1">
+      
+      <!-- ==================== TAB 1: RINGKASAN ==================== -->
+      <div id="tab-ringkasan" class="tab-content space-y-6">
+        
+        <!-- Stats Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          
+          <div class="bg-white p-5 rounded-2xl border border-gray-200 shadow-sm flex items-center justify-between">
+            <div>
+              <p class="text-[11px] text-gray-500 font-semibold uppercase">Total Murid Sanggar</p>
+              <h3 class="text-2xl font-black text-[#a4413b] mt-1" id="statMurid">128</h3>
+              <p class="text-[10px] text-green-600 mt-1 font-medium">↑ +14 bulan ini</p>
+            </div>
+            <div class="w-12 h-12 rounded-xl bg-[#e3b695]/30 text-[#a4413b] flex items-center justify-center text-xl">
+              <i class="fas fa-user-graduate"></i>
+            </div>
+          </div>
+
+          <div class="bg-white p-5 rounded-2xl border border-gray-200 shadow-sm flex items-center justify-between">
+            <div>
+              <p class="text-[11px] text-gray-500 font-semibold uppercase">Karya Tari & Musik</p>
+              <h3 class="text-2xl font-black text-[#333333] mt-1" id="statKarya">54</h3>
+              <p class="text-[10px] text-gray-400 mt-1 font-medium">Produksi Resmi</p>
+            </div>
+            <div class="w-12 h-12 rounded-xl bg-gray-100 text-gray-700 flex items-center justify-center text-xl">
+              <i class="fas fa-music"></i>
+            </div>
+          </div>
+
+          <div class="bg-white p-5 rounded-2xl border border-gray-200 shadow-sm flex items-center justify-between">
+            <div>
+              <p class="text-[11px] text-gray-500 font-semibold uppercase">Artikel Diterbitkan</p>
+              <h3 class="text-2xl font-black text-[#333333] mt-1" id="statArtikel">96</h3>
+              <p class="text-[10px] text-gray-400 mt-1 font-medium">Berita & Pengumuman</p>
+            </div>
+            <div class="w-12 h-12 rounded-xl bg-gray-100 text-gray-700 flex items-center justify-center text-xl">
+              <i class="fas fa-newspaper"></i>
+            </div>
+          </div>
+
+          <div class="bg-white p-5 rounded-2xl border border-gray-200 shadow-sm flex items-center justify-between">
+            <div>
+              <p class="text-[11px] text-gray-500 font-semibold uppercase">Pendaftar Baru</p>
+              <h3 class="text-2xl font-black text-[#a4413b] mt-1" id="statPendaftar">6</h3>
+              <p class="text-[10px] text-orange-600 mt-1 font-medium">Menunggu Verifikasi</p>
+            </div>
+            <div class="w-12 h-12 rounded-xl bg-[#e3b695]/30 text-[#a4413b] flex items-center justify-center text-xl">
+              <i class="fas fa-envelope-open-text"></i>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Quick Activity Table -->
+        <div class="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
+          <div class="p-5 border-b border-gray-100 flex items-center justify-between">
+            <h3 class="font-bold text-sm text-[#333333]">Pendaftar Kelas Seni Terbaru (Simulasi)</h3>
+            <button onclick="showTab('pendaftar')" class="text-xs text-[#a4413b] hover:underline font-semibold">Lihat Semua →</button>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs">
+              <thead class="bg-gray-50 text-gray-500 uppercase text-[10px] border-b border-gray-200">
+                <tr>
+                  <th class="py-3 px-4">Nama Siswa</th>
+                  <th class="py-3 px-4">Program</th>
+                  <th class="py-3 px-4">Kategori Usia</th>
+                  <th class="py-3 px-4">Tanggal Daftar</th>
+                  <th class="py-3 px-4">Status</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-100 text-gray-700" id="tablePreviewPendaftar">
+                <tr>
+                  <td class="py-3 px-4 font-semibold text-[#333333]">Anindya Larasati</td>
+                  <td class="py-3 px-4">Tari Tradisi & Kreasi</td>
+                  <td class="py-3 px-4">Sekolah Dasar (7-12 Thn)</td>
+                  <td class="py-3 px-4 text-gray-500">Hari ini, 14:20</td>
+                  <td class="py-3 px-4"><span class="px-2 py-0.5 rounded-full bg-green-100 text-green-700 font-bold text-[10px]">Terkonfirmasi WA</span></td>
+                </tr>
+                <tr>
+                  <td class="py-3 px-4 font-semibold text-[#333333]">Bagas Permana</td>
+                  <td class="py-3 px-4">Karawitan / Musik Etnik</td>
+                  <td class="py-3 px-4">SMP / SMA (13-18 Thn)</td>
+                  <td class="py-3 px-4 text-gray-500">Kemarin, 09:15</td>
+                  <td class="py-3 px-4"><span class="px-2 py-0.5 rounded-full bg-green-100 text-green-700 font-bold text-[10px]">Terkonfirmasi WA</span></td>
+                </tr>
+                <tr>
+                  <td class="py-3 px-4 font-semibold text-[#333333]">Citra Kirana</td>
+                  <td class="py-3 px-4">Kelas Intensif Privat</td>
+                  <td class="py-3 px-4">Sekolah Dasar (7-12 Thn)</td>
+                  <td class="py-3 px-4 text-gray-500">2 hari lalu</td>
+                  <td class="py-3 px-4"><span class="px-2 py-0.5 rounded-full bg-yellow-100 text-yellow-800 font-bold text-[10px]">Proses Jadwal</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ==================== TAB 2: KELOLA ARTIKEL ==================== -->
+      <div id="tab-artikel" class="tab-content hidden space-y-6">
+        
+        <!-- Form Tambah Artikel -->
+        <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm space-y-4">
+          <h3 class="font-bold text-sm text-[#a4413b] font-['Montserrat'] flex items-center gap-2">
+            <i class="fas fa-plus-circle"></i>
+            <span>Tambah Artikel / Berita Baru</span>
+          </h3>
+
+          <form id="formTambahArtikel" onsubmit="tambahArtikel(event)" class="space-y-4 text-xs">
+            <div>
+              <label class="block font-semibold text-gray-700 mb-1">Judul Artikel / Berita</label>
+              <input type="text" id="inputJudul" required placeholder="Contoh: Pentas Seni Akhir Semester Sanggar Damar Art 2026" class="w-full px-3.5 py-2.5 rounded-lg border border-gray-300 focus:outline-none focus:border-[#a4413b]">
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block font-semibold text-gray-700 mb-1">Kategori</label>
+                <select id="inputKategori" class="w-full px-3.5 py-2.5 rounded-lg border border-gray-300 focus:outline-none focus:border-[#a4413b]">
+                  <option value="Berita">Berita Sanggar</option>
+                  <option value="Pengumuman">Pengumuman</option>
+                  <option value="Prestasi">Prestasi / Panggung</option>
+                  <option value="Workshop">Workshop & Roadshow</option>
+                </select>
+              </div>
+              <div>
+                <label class="block font-semibold text-gray-700 mb-1">Nama Penulis / Operator</label>
+                <input type="text" id="inputPenulis" value="Operator Damar Art" class="w-full px-3.5 py-2.5 rounded-lg border border-gray-300 focus:outline-none focus:border-[#a4413b]">
+              </div>
+            </div>
+
+            <div>
+              <label class="block font-semibold text-gray-700 mb-1">Ringkasan / Isi Berita</label>
+              <textarea id="inputIsi" rows="3" required placeholder="Tuliskan isi berita di sini..." class="w-full px-3.5 py-2.5 rounded-lg border border-gray-300 focus:outline-none focus:border-[#a4413b]"></textarea>
+            </div>
+
+            <button type="submit" class="px-5 py-2.5 rounded-lg bg-[#a4413b] hover:bg-[#8e322d] text-white font-bold text-xs shadow transition-colors flex items-center gap-2">
+              <i class="fas fa-paper-plane"></i>
+              <span>Publikasikan Artikel</span>
+            </button>
+          </form>
+        </div>
+
+        <!-- Daftar Artikel -->
+        <div class="bg-white rounded-2xl border border-gray-200 shadow-sm p-5 space-y-4">
+          <h3 class="font-bold text-sm text-[#333333]">Daftar Artikel yang Telah Terbit</h3>
+          <div class="space-y-3" id="daftarArtikelList">
+            <!-- Article Item -->
+            <div class="p-4 rounded-xl border border-gray-200 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+              <div>
+                <span class="text-[10px] px-2 py-0.5 rounded bg-red-100 text-[#a4413b] font-bold">Workshop</span>
+                <h4 class="font-bold text-sm text-[#333333] mt-1">Workshop Tari Damar Art 2026: Roadshow 4 Kota Jawa Timur</h4>
+                <p class="text-xs text-gray-500 mt-0.5">Diterbitkan pada: 8 September 2026 oleh Admin</p>
+              </div>
+              <button onclick="this.parentElement.remove()" class="text-xs text-red-600 hover:underline font-semibold">Hapus</button>
+            </div>
+
+            <div class="p-4 rounded-xl border border-gray-200 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+              <div>
+                <span class="text-[10px] px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold">Prestasi</span>
+                <h4 class="font-bold text-sm text-[#333333] mt-1">Semarak Kemerdekaan Bersama Damar Art 2026</h4>
+                <p class="text-xs text-gray-500 mt-0.5">Diterbitkan pada: 17 Agustus 2026 oleh Admin</p>
+              </div>
+              <button onclick="this.parentElement.remove()" class="text-xs text-red-600 hover:underline font-semibold">Hapus</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ==================== TAB 3: PENDAFTAR PPDB ==================== -->
+      <div id="tab-pendaftar" class="tab-content hidden space-y-6">
+        <div class="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 space-y-4">
+          <div class="flex items-center justify-between">
+            <h3 class="font-bold text-sm text-[#a4413b] font-['Montserrat']">Data Calon Murid Baru (PPDB)</h3>
+            <button onclick="alert('Data berhasil diekspor!')" class="px-3 py-1.5 rounded-lg bg-green-600 hover:bg-green-700 text-white text-xs font-semibold flex items-center gap-1.5">
+              <i class="fas fa-file-excel"></i>
+              <span>Export Data</span>
+            </button>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs">
+              <thead class="bg-gray-50 text-gray-500 uppercase text-[10px] border-b">
+                <tr>
+                  <th class="py-3 px-4">Nama Siswa</th>
+                  <th class="py-3 px-4">Program Pilihan</th>
+                  <th class="py-3 px-4">Kategori Usia</th>
+                  <th class="py-3 px-4">No. WhatsApp</th>
+                  <th class="py-3 px-4">Aksi</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-100" id="tableFullPendaftar">
+                <tr>
+                  <td class="py-3.5 px-4 font-bold text-gray-800">Anindya Larasati</td>
+                  <td class="py-3.5 px-4">Tari Tradisi & Kreasi</td>
+                  <td class="py-3.5 px-4">Sekolah Dasar (7-12 Thn)</td>
+                  <td class="py-3.5 px-4"><a href="https://wa.me/6282140704036" class="text-green-600 font-semibold hover:underline">0812-3456-7890</a></td>
+                  <td class="py-3.5 px-4">
+                    <button onclick="this.closest('tr').remove()" class="text-red-500 hover:underline font-semibold">Hapus</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="py-3.5 px-4 font-bold text-gray-800">Bagas Permana</td>
+                  <td class="py-3.5 px-4">Karawitan / Musik Etnik</td>
+                  <td class="py-3.5 px-4">SMP / SMA (13-18 Thn)</td>
+                  <td class="py-3.5 px-4"><a href="https://wa.me/6282140704036" class="text-green-600 font-semibold hover:underline">0813-9876-5432</a></td>
+                  <td class="py-3.5 px-4">
+                    <button onclick="this.closest('tr').remove()" class="text-red-500 hover:underline font-semibold">Hapus</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== TAB 4: KOLEKSI KARYA ==================== -->
+      <div id="tab-karya" class="tab-content hidden space-y-6">
+        <div class="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 space-y-4">
+          <h3 class="font-bold text-sm text-[#a4413b] font-['Montserrat']">Katalog Karya Tari & Musik</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-xs">
+            <div class="p-4 rounded-xl border border-gray-200 bg-gray-50 space-y-2">
+              <span class="text-[10px] font-bold text-[#a4413b]">Tari Kreasi</span>
+              <h4 class="font-bold text-sm text-[#333333]">Wanci Kahuripan</h4>
+              <p class="text-gray-500 text-[11px]">Koreografi orisinil khas tradisi Banyuwangi.</p>
+            </div>
+            <div class="p-4 rounded-xl border border-gray-200 bg-gray-50 space-y-2">
+              <span class="text-[10px] font-bold text-[#a4413b]">Tari Kreasi</span>
+              <h4 class="font-bold text-sm text-[#333333]">Tanjung Gemirang</h4>
+              <p class="text-gray-500 text-[11px]">Koreografi tari kipas & selendang pesisir.</p>
+            </div>
+            <div class="p-4 rounded-xl border border-gray-200 bg-gray-50 space-y-2">
+              <span class="text-[10px] font-bold text-[#e3b695] bg-[#a4413b] px-2 py-0.5 rounded">Musik Etnik</span>
+              <h4 class="font-bold text-sm text-[#333333]">Gembrong Gemirang</h4>
+              <p class="text-gray-500 text-[11px]">Komposisi tabuhan perkusi & gamelan Osing.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script>
+    // Tab switching logic
+    function showTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.sidebar-link').forEach(el => {
+        el.classList.remove('bg-[#8e322d]', 'text-[#e3b695]', 'font-bold');
+        el.classList.add('text-gray-200');
+      });
+
+      const selectedTab = document.getElementById('tab-' + tabId);
+      if (selectedTab) selectedTab.classList.remove('hidden');
+
+      const titleMap = {
+        'ringkasan': 'Dashboard Operator - Ringkasan Data',
+        'artikel': 'Kelola Artikel & Berita Sanggar',
+        'pendaftar': 'Data Calon Murid (PPDB Online)',
+        'karya': 'Katalog Karya Tari & Musik'
+      };
+      document.getElementById('pageTitle').innerText = titleMap[tabId] || 'Dashboard Operator';
+    }
+
+    // Add new article logic (local simulation)
+    function tambahArtikel(e) {
+      e.preventDefault();
+      const judul = document.getElementById('inputJudul').value;
+      const kategori = document.getElementById('inputKategori').value;
+      const penulis = document.getElementById('inputPenulis').value;
+
+      const container = document.getElementById('daftarArtikelList');
+      const div = document.createElement('div');
+      div.className = "p-4 rounded-xl border border-gray-200 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 bg-green-50/50";
+      div.innerHTML = `
+        <div>
+          <span class="text-[10px] px-2 py-0.5 rounded bg-[#a4413b] text-white font-bold">${kategori}</span>
+          <h4 class="font-bold text-sm text-[#333333] mt-1">${judul}</h4>
+          <p class="text-xs text-gray-500 mt-0.5">Diterbitkan Baru Saja oleh ${penulis}</p>
+        </div>
+        <button onclick="this.parentElement.remove()" class="text-xs text-red-600 hover:underline font-semibold">Hapus</button>
+      `;
+
+      container.prepend(div);
+      document.getElementById('formTambahArtikel').reset();
+      alert('Artikel berhasil diterbitkan ke daftar lokal!');
+    }
+
+    function logout() {
+      alert('Anda telah keluar dari sesi operator.');
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>
